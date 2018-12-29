@@ -98,7 +98,7 @@
 			@else
 			<?php
 			 $fenlei = \DB::Table('fenleis') ->where('id',$v['id'])->get();
-			 $article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(3) -> get();
+			 $article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(2) -> get();
 			 ?>
 			@foreach($fenlei as $vel)
 			<div class="products">
