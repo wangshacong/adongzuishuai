@@ -24,37 +24,11 @@
 <body>
 	<!--通用导航开始-->
 	<div class="top">
-			@include('gong.head')
+		@include('gong.head')
 		<!--通用导航 end-->
 
 		<!-- logo频道名及大通栏 -->
-		<div class="logo">
-			<div class="logo_tw"><a href="http://www.xunjk.com"><img src="/images/logoclear.png" style="width:144px;height:60px;"></a>
-				<h2><span>融资频道</span></h2>
-			</div>
-			<div class="top_banner" style="text-align: center;">
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- 自适应2 -->
-				<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1811059776868199" data-ad-slot="5628184461"
-				 data-ad-format="auto"></ins>
-				<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-				</script> <!-- 广告位：TW频道页顶通2017自适应 -->
-				<!--<script>
-	(function() {
-		var s = "_" + Math.random().toString(36).slice(2);
-		document.write('<div id="' + s + '"></div>');
-		(window.slotbydup=window.slotbydup || []).push({
-			id: '5423323',
-			container: s,
-			size: '20,2',
-			display: 'inlay-fix'
-		});
-	})();
-	</script>-->
-				<script src="/js/om.js"></script>
-			</div>
-		</div>
+
 
 		<div class="channel_main">
 			<div class="channel_l">
@@ -105,7 +79,7 @@
 								<span>{{$v['created_at']}}</span>
 							</div>
 						</div>
-						
+
 
 						<div class="picture">
 							<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66891.html" target="_blank">
@@ -114,11 +88,11 @@
 					</div>
 					@endforeach
 					<div class="page">
-							
-									{{$article->appends(request()->all())->links()}}
-								
 
-						</div>
+						{{$article->appends(request()->all())->links()}}
+
+
+					</div>
 				</div>
 
 			</div>

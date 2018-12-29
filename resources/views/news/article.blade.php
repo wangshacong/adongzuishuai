@@ -34,31 +34,20 @@
         @include('gong.head')
         <!--通用导航 end-->
         <!-- logo及大通栏 -->
-        <div class="logo">
-            <a href="http://www.xunjk.com/">
-                <img src="/images/logonew.png" style="width:170px;height:80px;">
-            </a>
-            <div class="logo_tw">
-                <a href="http://www.xunjk.com/">
-                    <img src="/images/logonew.png" style="width:170px;height:80px;">
-                </a>
-            </div>
-            <div class="top_banner" style="text-align: center;">
 
-                <script src="/js/om.js"></script>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- 970*90 -->
-                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-1811059776868199"
-                    data-ad-slot="4127560461"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
         <!--面包屑 start-->
         <div class="breadnav">
-            <a href="http://www.xunjk.com" class="logo_tw_s" title="TechWeb首页">首页</a>
-            <a href="http://www.xunjk.com/xinwen/">新闻</a> > <a href="http://www.xunjk.com/xinwen/rongzi/">融资</a> > 正文
+            @foreach($content as $v)
+            <?php
+                $fenlei_name = \DB::Table('fenleis')->where('id',$v['fenlei_id'])->get();
+                //var_dump($fenlei_name);
+                ?>
+            @foreach($fenlei_name as $val)
+            <a href="/" class="logo_tw_s" title="TechWeb首页">首页</a>
+            <a href="fenlei/{{$v->fenlei_id}}">{{$val->fenlei_name}}</a> 正文
+            @endforeach
+
+            @endforeach
         </div>
         <!--面包屑 end-->
 
