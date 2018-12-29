@@ -1,5 +1,6 @@
 <div class="top_con">
 		<div class="nav">
+		<div class="logo_tw"><a href="" target="_blank"><img src="/images/logonew.png"></a></div>
 			<div class="go_index"><a href="/">首页<i>HOME</i></a></div>
 			<div class="nav1">
 
