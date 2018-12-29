@@ -30,12 +30,12 @@
 
 		<!--通用导航 end-->
 		<div class="logo">
-			
+
 			<div class="top_banner" style="text-align: center;">
 				<!-- <a href="http://sj22222.com/"><img src="/images/广告条.gif" width="600" height="56" /></a> -->
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- 890*70 -->
-				
+
 				<script>
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>
@@ -43,41 +43,7 @@
 			</div>
 		</div>
 		<!--人物 start-->
-		<div class="personage">
-			<div class="personage_item">
-				<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66891.html" target="_blank">
-					<div class="personage_img">
-						<img src="http://www.xinhuanet.com/local/2018-12/21/1123883049_15453498627091n.jpg" width="110" height="80" alt="能擦玻璃能炒菜还能说会道 机器人做餐厅主角" /></div>
-					<h4><i>能擦玻璃能炒菜还能说会道 机器人做餐厅主角</i></h4>
-				</a>
-			</div>
-			<div class="personage_item">
-				<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66890.html" target="_blank">
-					<div class="personage_img">
-						<img src="http://www.people.com.cn/mediafile/pic/20181221/77/13434659688297847629.jpg" width="110" height="80"
-						 alt="限购最严城市珠海正降低门槛 松绑意义在于中期维" /></div>
-					<h4><i>限购最严城市珠海正降低门槛 松绑意义在于中期维</i></h4>
-				</a>
-			</div>
-			<div class="personage_item">
-				<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66887.html" target="_blank">
-					<div class="personage_img">
-						<img src="http://i2.chinanews.com/simg/cmshd/2018/12/21/303c85a9142b49069ec433fe8b65e9e8.jpg" width="110" height="80"
-						 alt="美股“寒潮”来袭 股三大股指全线低开 " /></div>
-					<h4><i>美股“寒潮”来袭 股三大股指全线低开 </i></h4>
-				</a>
-			</div>
-			<div class="personage_item">
-				<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66883.html" target="_blank">
-					<div class="personage_img">
-						<img src="http://n6.cmsfile.pg0.cn/group3/M00/0A/1C/CgoOFFwcd-WAaAThAAKb_CvmpXQ879.png" width="110" height="80"
-						 alt="一级公路、二级公路将逐步有序停止收费" /></div>
-					<h4><i>一级公路、二级公路将逐步有序停止收费</i></h4>
-				</a>
-			</div>
 
-
-		</div>
 		<!--人物 end-->
 		<!--头条 start-->
 		<div class="top_news">
@@ -109,11 +75,13 @@
 		</div>
 		<!--一屏 start-->
 		<div class="con_box eadas">
+
 			<!--新闻 start-->
 			@foreach($fenlei as $v)
+			@if($v['id'] % 3 != 0)
 			<div class="news">
 
-				<h2 class="tit"><a href="/fenlei/{{$v['id']}}">{{$v['fenlei_name']}}</a><span class="more"><a href="http://www.xunjk.com/xinwen/rongzi/">更多</a></span></h2>
+				<h2 class="tit"><a href="/fenlei/{{$v['id']}}">{{$v['fenlei_name']}}</a><span class="more"><a href="fenlei/{{$v['id']}}">更多</a></span></h2>
 				<?php 
 				
 					$article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(10) -> get();
@@ -127,27 +95,30 @@
 
 				</ul>
 			</div>
-			@endforeach
-			<!--新闻 end-->
-			<!--新品 start-->
+			@else
+			<?php
+			 $fenlei = \DB::Table('fenleis') ->where('id',$v['id'])->get();
+			 $article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(3) -> get();
+			 ?>
+			@foreach($fenlei as $vel)
 			<div class="products">
-				
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/yejie/2018/1220/66732.html" target="_blank">
-						<img src="http://www.people.com.cn/mediafile/pic/20181220/87/1041941340206911999.jpg" alt='中介大战 年底再度迎来升级' title='中介大战 年底再度迎来升级' />
-						<h3><span>中介大战 年底再度迎来升级</span></h3>
-					</a></div>
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/yejie/2018/1220/66729.html" target="_blank">
-						<img src="http://www.people.com.cn/mediafile/pic/20181220/24/9220863939311856380.jpg" alt='冲刺 北京六个住宅项目同天获批' title='冲刺 北京六个住宅项目同天获批' />
-						<h3><span>冲刺 北京六个住宅项目同天获批</span></h3>
-					</a></div>
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/yejie/2018/1217/66239.html" target="_blank">
-						<img src="http://n8.cmsfile.pg0.cn/group4/M00/09/9F/CgoOFVwXGuCAaMR1AAAeqrCtTTY730.jpg" alt='银行卡免密“闪付”可能让你的钱“闪没”'
-						 title='银行卡免密“闪付”可能让你的钱“闪没”' />
-						<h3><span>银行卡免密“闪付”可能让你的钱“闪没”</span></h3>
-					</a></div>
-
+				<h2 class="tit"><a href="fenlei/{{$vel->id}}">{{$vel->fenlei_name}}</a><span class="more"><a href="fenlei/{{$vel->id}}">更多</a></span></h2>
+				@foreach($article as $vrl)
+				<div class="product_item"><a href="article/{{$vrl->id}}" target="_blank">
+						<img src="{{$vrl->news_pic}}" alt="低价出售410万旅客信息？12306回应：为第三方泄漏" title="{{$vrl->title}}">
+						<h3><span>{{$vrl->title}}</span></h3>
+					</a>
+				</div>
+				@endforeach
 
 			</div>
+			@endforeach
+			@endif
+			@endforeach
+
+			<!--新闻 end-->
+			<!--新品 start-->
+
 			<!--新品 end-->
 			<!--选择、比拼 start-->
 			<div class="con_r">
@@ -164,26 +135,6 @@
 						}
 					</script>
 				</div>
-
-				<h2 class="tit">创新</h2>
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1225/67259.html" target="_blank">
-						<img id="n41" src="http://www.xinhuanet.com/tech/2018-12/25/1123898734_15456931779351n.jpg" alt='中国企业开启数字化采购时代'
-						 title='中国企业开启数字化采购时代' />
-
-						<h3><span>中国企业开启数字化采购时代</span></h3>
-					</a></div>
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1225/67258.html" target="_blank">
-						<img id="n41" src="http://www.xinhuanet.com/tech/2018-12/25/1123898731_15456931096161n.jpg" alt='布局国际市场 推进制造研发'
-						 title='布局国际市场 推进制造研发' />
-
-						<h3><span>布局国际市场 推进制造研发</span></h3>
-					</a></div>
-				<div class="product_item"><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1224/67112.html" target="_blank">
-						<img id="n41" src="http://scitech.people.com.cn/NMediaFile/2018/1224/MAIN201812240900000087398281433.jpg" alt='发力底层技术 让机器更聪明'
-						 title='发力底层技术 让机器更聪明' />
-
-						<h3><span>发力底层技术 让机器更聪明</span></h3>
-					</a></div>
 
 
 				<script>
