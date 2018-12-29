@@ -380,7 +380,7 @@
 .news {
 	width: 31.333%;
     float: left;
-    height: 320px;
+    /* height: 320px; */
     /* padding-top: 30px; */
     padding: 10px 10px 10px 10px;
 }
