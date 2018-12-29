@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<title>融资 - 中国创投网- 领先的互联网消费互动媒体</title>
+	<meta name="keywords" content="互联网消费,互联网金融,互联网+,移动互联网,电子商务,手机游戏,O2O,创业创新,投资融资,智能设备,智能手机,VR及AR,AI人工智能" />
+	<meta name="description" content="中国创投网专注于互联网消费领域，每日专业提供互联网产品、智能设备及互联网服务等方面的最新资讯，呈现为网站、微博、微信、APP等全媒体新形态，是国内领先的互联网消费互动媒体。" />
+	<script type="text/javDESCript">
+
+		var title="融资";
+
+</script>
+	<meta name="Copyright" content="Techweb版权所有" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<link href="/images/favicon.ico" rel="shortcut icon" type="images/x-icon" />
+	<link href="/css/list_style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
+	<link href="/css/base.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
+
+</head>
+
+<body>
+	<!--通用导航开始-->
+	<div class="top">
+			@include('gong.head')
+		<!--通用导航 end-->
+
+		<!-- logo频道名及大通栏 -->
+		<div class="logo">
+			<div class="logo_tw"><a href="http://www.xunjk.com"><img src="/images/logoclear.png" style="width:144px;height:60px;"></a>
+				<h2><span>融资频道</span></h2>
+			</div>
+			<div class="top_banner" style="text-align: center;">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- 自适应2 -->
+				<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1811059776868199" data-ad-slot="5628184461"
+				 data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script> <!-- 广告位：TW频道页顶通2017自适应 -->
+				<!--<script>
+	(function() {
+		var s = "_" + Math.random().toString(36).slice(2);
+		document.write('<div id="' + s + '"></div>');
+		(window.slotbydup=window.slotbydup || []).push({
+			id: '5423323',
+			container: s,
+			size: '20,2',
+			display: 'inlay-fix'
+		});
+	})();
+	</script>-->
+				<script src="/js/om.js"></script>
+			</div>
+		</div>
+
+		<div class="channel_main">
+			<div class="channel_l">
+				<!--筛选 start-->
+				<!--焦点图start-->
+				<div class="jiaodiantu">
+					<ul>
+						<li class="jiaodiantu_box2"><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66890.html" target="_blank"><span></span><img
+								 src="http://www.people.com.cn/mediafile/pic/20181221/77/13434659688297847629.jpg" alt="限购最严城市珠海正降低门槛 松绑意义在于中期维稳托底">
+								<div class="jiaodiantu_tit">
+									<h3>限购最严城市珠海正降低门槛 松绑意义在于中期维稳托底</h3>
+								</div>
+								<div class="zhezhao"></div>
+							</a></li>
+						<li class="jiaodiantu_box3"><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66887.html" target="_blank"><span></span><img
+								 src="http://i2.chinanews.com/simg/cmshd/2018/12/21/303c85a9142b49069ec433fe8b65e9e8.jpg" alt="美股“寒潮”来袭 股三大股指全线低开 ">
+								<div class="jiaodiantu_tit">
+									<h3>美股“寒潮”来袭 股三大股指全线低开 </h3>
+								</div>
+								<div class="zhezhao"></div>
+							</a></li>
+					</ul>
+				</div>
+
+
+				<!--焦点图end-->
+				<div id="wp" class="shaixuan">
+					<ul>
+						<li class="on"><a href="http://www.xunjk.com/xinwen/">最新文章</a></li>
+						<li><a href="http://www.xunjk.com/xinwen/rongzi/">融资</a></li>
+						<li><a href="http://www.xunjk.com/xinwen/chuangxin/">创新</a></li>
+						<li><a href="http://www.xunjk.com/xinwen/touzi/">投资</a></li>
+						<li><a href="http://www.xunjk.com/xinwen/gongsi/">公司</a></li>
+
+					</ul>
+				</div>
+				<!--筛选 end-->
+				<!--列表 start-->
+				<div class="list_con">
+					@foreach($article as $v)
+					<div class="picture_text">
+						<div class="text">
+							<a href="/article/{{$v['id']}}" target="_blank">
+								<h4>{{$v['title']}}</h4>
+							</a>
+							<p>首届中国国际进口博览会上，智能机器人正在演示自动点焊。 翁奇羽...</p>
+							<div class="time_tag">
+								<span>{{$v['created_at']}}</span>
+							</div>
+						</div>
+						
+
+						<div class="picture">
+							<a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66891.html" target="_blank">
+							</a>
+						</div>
+					</div>
+					@endforeach
+					<div class="page">
+							
+									{{$article->appends(request()->all())->links()}}
+								
+
+						</div>
+				</div>
+
+			</div>
+			<!--列表 end-->
+			<!--右侧区块 start-->
+			@include('gong.right')
+		</div>
+		<!--右侧区块 end-->
+	</div>
+	<!--底部 start-->
+	<!--底部 start-->
+	@include('gong.footer')
