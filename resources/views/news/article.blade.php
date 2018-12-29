@@ -57,8 +57,17 @@
         </div>
         <!--面包屑 start-->
         <div class="breadnav">
-            <a href="http://www.xunjk.com" class="logo_tw_s" title="TechWeb首页">首页</a>
-            <a href="http://www.xunjk.com/xinwen/">新闻</a> > <a href="http://www.xunjk.com/xinwen/rongzi/">融资</a> > 正文
+                @foreach($content as $v)
+                <?php
+                $fenlei_name = \DB::Table('fenleis')->where('id',$v['fenlei_id'])->get();
+                //var_dump($fenlei_name);
+                ?>
+                @foreach($fenlei_name as $val)
+            <a href="/" class="logo_tw_s" title="TechWeb首页">首页</a>
+            <a href="fenlei/{{$v->fenlei_id}}">{{$val->fenlei_name}}</a>  正文
+                @endforeach
+           
+            @endforeach
         </div>
         <!--面包屑 end-->
 
