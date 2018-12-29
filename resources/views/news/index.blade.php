@@ -30,13 +30,12 @@
 
 		<!--通用导航 end-->
 		<div class="logo">
-			<div class="logo_tw"><a href="" target="_blank"><img src="/images/logonew.png"></a></div>
+			
 			<div class="top_banner" style="text-align: center;">
 				<!-- <a href="http://sj22222.com/"><img src="/images/广告条.gif" width="600" height="56" /></a> -->
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 				<!-- 890*70 -->
-				<ins class="adsbygoogle" style="display:inline-block;width:890px;height:70px" data-ad-client="ca-pub-1811059776868199"
-				 data-ad-slot="9703089263"></ins>
+				
 				<script>
 					(adsbygoogle = window.adsbygoogle || []).push({});
 				</script>

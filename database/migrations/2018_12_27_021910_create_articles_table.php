@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('zuozhe')->comment('作者');
             $table->text('content')->comment('文章内容');
             $table->string('fenlei_id')->comment('所属分类');
-            $table->string('pic')->comment('图片');
+            $table->string('news_pic')->comment('图片');
             $table->timestamps();
         });
     }

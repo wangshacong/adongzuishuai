@@ -23,7 +23,7 @@ a:hover{text-decoration:none;color:#0093e8;}
 .nav1{ width:400px;}
 .nav2{ width:220px;}
 .nav3{ width:70px; padding-left:31px;}
-.nav .go_index{border-right:#E8E8E8 solid 1px;padding:5px 31px 5px 0;}
+.nav .go_index{border-right:#E8E8E8 solid 1px;padding:5px 31px 5px 0;width: 5%;}
 .nav .go_index a{font-size:16px; font-weight:noraml; line-height:20px; color:#252a2d;}
 .nav .go_index a:hover i{color:#02afff;}
 .nav .go_index i{ display:block; font-size:12px; font-weight:lighter; color:#b9b9b9;}
