@@ -14,6 +14,7 @@
 	<link type="text/css" href="/css/jquery-ui-1.8.6.custom.css" rel="stylesheet" meddia="screen" />
 	<link href="/css/base.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
 	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<!--[if IE 8]>
         <link rel="stylesheet" type="text/css" href="css/iestyle.css"/>
 <![endif]-->

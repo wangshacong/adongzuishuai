@@ -13,6 +13,7 @@
 		var title="融资";
 
 </script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<meta name="Copyright" content="Techweb版权所有" />
 	<meta http-equiv="Cache-Control" content="no-transform" />
 	<link href="/images/favicon.ico" rel="shortcut icon" type="images/x-icon" />
@@ -34,24 +35,7 @@
 			<div class="channel_l">
 				<!--筛选 start-->
 				<!--焦点图start-->
-				<div class="jiaodiantu">
-					<ul>
-						<li class="jiaodiantu_box2"><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66890.html" target="_blank"><span></span><img
-								 src="http://www.people.com.cn/mediafile/pic/20181221/77/13434659688297847629.jpg" alt="限购最严城市珠海正降低门槛 松绑意义在于中期维稳托底">
-								<div class="jiaodiantu_tit">
-									<h3>限购最严城市珠海正降低门槛 松绑意义在于中期维稳托底</h3>
-								</div>
-								<div class="zhezhao"></div>
-							</a></li>
-						<li class="jiaodiantu_box3"><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66887.html" target="_blank"><span></span><img
-								 src="http://i2.chinanews.com/simg/cmshd/2018/12/21/303c85a9142b49069ec433fe8b65e9e8.jpg" alt="美股“寒潮”来袭 股三大股指全线低开 ">
-								<div class="jiaodiantu_tit">
-									<h3>美股“寒潮”来袭 股三大股指全线低开 </h3>
-								</div>
-								<div class="zhezhao"></div>
-							</a></li>
-					</ul>
-				</div>
+				
 
 
 				<!--焦点图end-->

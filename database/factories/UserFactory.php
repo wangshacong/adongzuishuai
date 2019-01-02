@@ -20,6 +20,7 @@ $factory->define(App\Article::class, function (Faker $faker) {
         'content' => $faker->text(500), // secret
         'fenlei_id' => rand(1,10),
         'news_pic' =>$faker->imageUrl(),
+        'dianji' => rand(100,1000),
         'created_at'=>$faker->dateTimeThisMonth(),
         'updated_at'=>$faker->dateTimeThisMonth(),
     ];

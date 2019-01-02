@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-
+    @foreach($content as $v)
     <meta name="baidu_union_verify" content="e718eb0dd4320c884de414f6558fc60f" />
-       <title>能擦玻璃能炒菜还能说会道 机器人做餐厅主角_中国创投网</title>
+    <title>{{$v['title']}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="keywords" content="互联网消费,互联网金融,互联网+,移动互联网,电子商务,手机游戏,O2O,创业创新,投资融资,智能设备,智能手机,VR及AR,AI人工智能">
     <meta name="description" content="首届中国国际进口博览会上，智能机器人正在演示自动点焊。 翁奇羽摄(人民图片)最近，北京一家新开业的智能餐厅成了网红。在这家餐厅，不仅...">
@@ -17,6 +17,7 @@
     <link href="/images/favicon.ico" rel="shortcut icon" type="images/x-icon" />
     <link href="/css/article_style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
     <link href="/css/base_4.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
+    @endforeach
     <script type="text/javascript" src="/js/basejq312.js"></script>
 
 
@@ -139,80 +140,23 @@
                 </div>
 
                 <!---今日热点start-->
+                <?php
+                    $redian = \DB::Table('articles')->orderBy('id','desc')->limit(3)->get();
+                ?>
                 <div class="hotpot">
                     <h2 class="tit">今日热点</h2>
                     <div class="hotpot_con">
-                        <div class="hotpot_list"><a href="http://www.xunjk.com/xinwen/keji/2018/1220/66691.html" target="_blank"><img
-                                    src="http://scitech.people.com.cn/NMediaFile/2018/1220/MAIN201812200901000286268534861.jpg"
+                        @foreach($redian as $v)
+                        <div class="hotpot_list"><a href="fenlei/{{$v->id}}" target="_blank"><img
+                                    src="{{$v->news_pic}}"
                                     alt="" />
-                                <h4>人工智能成为手机发展的“新引擎”</h4>
-                            </a></div>
-                        <div class="hotpot_list"><a href="http://www.xunjk.com/xinwen/keji/2018/1218/66444.html" target="_blank"><img
-                                    src="http://www.people.com.cn/mediafile/pic/20181218/30/13989882813881927350.jpg"
-                                    alt="" />
-                                <h4>在马里亚纳海沟探索海洋最深处的科学奥秘</h4>
-                            </a></div>
-                        <div class="hotpot_list"><a href="http://www.xunjk.com/xinwen/keji/2018/1218/66441.html" target="_blank"><img
-                                    src="http://scitech.people.com.cn/NMediaFile/2018/1214/MAIN201812140836000274463465410.jpg"
-                                    alt="" />
-                                <h4>火星甲烷神秘消失引发更多谜团</h4>
-                            </a></div>
-
-
+                                <h4>{{$v->title}}</h4>
+                            </a>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!---今日热点end-->
-                <!---为您推荐start-->
-                <div class="recommend">
-                    <h2 class="tit">为您推荐</h2>
-                    <div class="recommend_con">
-                        <div class="picture_text">
-                            <div class="text"><a href="http://www.xunjk.com/baoxian/2018/0622/45782.html" target="_blank">
-                                    <h4>陈东升详解险企控股医疗机构：“保险+医疗”闭环赋能产品与客户</h4>
-                                </a>
-                                <div class="time_tag"><span>
-                                        2018-12-21 15:48:33</span></div>
-                            </div>
-                            <div class="picture"><a href="http://www.xunjk.com/baoxian/2018/0622/45782.html" target="_blank"><img
-                                        src="http://cms.xunjk.com/statics/images/nopic.gif" alt="陈东升详解险企控股医疗机构：“保险+医疗”闭环赋能产品与客户" /></a></div>
-                        </div>
-                        <div class="picture_text">
-                            <div class="text"><a href="http://www.xunjk.com/baoxian/2018/0622/45780.html" target="_blank">
-                                    <h4>四大上市险企前5个月寿险业务增长11.15%</h4>
-                                </a>
-                                <div class="time_tag"><span>
-                                        2018-12-21 15:48:33</span></div>
-                            </div>
-                            <div class="picture"><a href="http://www.xunjk.com/baoxian/2018/0622/45780.html" target="_blank"><img
-                                        src="http://cms.xunjk.com/statics/images/nopic.gif" alt="四大上市险企前5个月寿险业务增长11.15%" /></a></div>
-                        </div>
-                        <div class="picture_text">
-                            <div class="text"><a href="http://www.xunjk.com/baoxian/2018/0622/45779.html" target="_blank">
-                                    <h4>百万医疗险 别被续保问题“一棍子打死”</h4>
-                                </a>
-                                <div class="time_tag"><span>
-                                        2018-12-21 15:48:33</span></div>
-                            </div>
-                            <div class="picture"><a href="http://www.xunjk.com/baoxian/2018/0622/45779.html" target="_blank"><img
-                                        src="http://cms.xunjk.com/statics/images/nopic.gif" alt="百万医疗险 别被续保问题“一棍子打死”" /></a></div>
-                        </div>
-                        <div class="picture_text">
-                            <div class="text"><a href="http://www.xunjk.com/baoxian/2018/0622/45778.html" target="_blank">
-                                    <h4>偿付能力承压 险企发债扩股“补血”忙</h4>
-                                </a>
-                                <div class="time_tag"><span>
-                                        2018-12-21 15:48:33</span></div>
-                            </div>
-                            <div class="picture"><a href="http://www.xunjk.com/baoxian/2018/0622/45778.html" target="_blank"><img
-                                        src="http://cms.xunjk.com/statics/images/nopic.gif" alt="偿付能力承压 险企发债扩股“补血”忙" /></a></div>
-                        </div>
-
-
-
-                        <a href="javascript:;" class="more_news">加载更多文章</a>
-                    </div>
-                </div>
-                <!---为您推荐end-->
             </div>
             <!--主体内容 end-->
             <!--右侧区块 start-->

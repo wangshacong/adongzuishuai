@@ -2,7 +2,7 @@
 
         <!--独家 start-->
 
-        <div class="exclusive">
+        {{-- <div class="exclusive">
 
 
             <ul>
@@ -100,36 +100,31 @@
 
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
         <!--排行 start-->
+        <?php
+                $paihang = \DB::Table('articles')->orderBy('dianji','desc')->limit(10)->get();  
+                $q3 = [$paihang[0],$paihang[1],$paihang[2]];
+                $h7 = [$paihang[3],$paihang[4],$paihang[5],$paihang[6],$paihang[7],$paihang[8],$paihang[9]];
+                dump($q3); 
+        ?>
         <div class="ranking">
             <h2 class="tit2">排行<em></em></h2>
             <div class="ranking_con">
+                
                 <ul>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66875.html" target="_blank" title="央行加强存款准备金管理 促进金融机构稳健经营">央行加强存款准备金管理
-                            促进金融机构稳健经营</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34690.html" target="_blank" title="卖茅台搭售其他商品、用鸭肉冒充肥牛&nbsp;这些陷阱别中招">卖茅台搭售其他商品、用鸭肉冒充肥牛&nbsp;这些陷阱别中招</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34689.html" target="_blank" title="中交新能源汽车产业园项目落户霸州&nbsp;总投资100亿元">中交新能源汽车产业园项目落户霸州&nbsp;总投资100亿元</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34688.html" target="_blank" title="第十二届中国航展将于今年11月在珠海举行">第十二届中国航展将于今年11月在珠海举行</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34687.html" target="_blank" title="第十二届中国航展将于今年11月6日至11日在珠海举行">第十二届中国航展将于今年11月6日至11日在珠海举行</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34686.html" target="_blank" title="亚冠：上港1-0蔚山提前出线&nbsp;胡尔克助攻埃尔克森破门">亚冠：上港1-0蔚山提前出线&nbsp;胡尔克助攻埃尔克森破门</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34685.html" target="_blank" title="富士康成功过会&nbsp;工业互联网再添一把火">富士康成功过会&nbsp;工业互联网再添一把火</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34684.html" target="_blank" title="第15届中国—东盟博览会将于9月在南宁举行">第15届中国—东盟博览会将于9月在南宁举行</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34683.html" target="_blank" title="2018中国国际进口博览会路演在雅加达举行">2018中国国际进口博览会路演在雅加达举行</a></li>
-
-                    <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/0314/34682.html" target="_blank" title="春运国内航班准点率提升7.32%&nbsp;&nbsp;吉祥航空到港最准点">春运国内航班准点率提升7.32%&nbsp;&nbsp;吉祥航空到港最准点</a></li>
-
+                        @foreach($q3 as $v)
+                    <li class="paihang" style="background:url({{$v->news_pic}});widht:262px;height:130px;"><a href="article/{{$v->id}}" target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                    
+                    </li>
+                    
+                        @endforeach
+                    @foreach($h7 as $v)
+                <li class="paihang"><a href="article/{{$v->id}}" target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                    @endforeach
                 </ul>
+                
             </div>
         </div>
         <!--排行 end-->
