@@ -100,6 +100,11 @@ class AdminController extends Controller
     //后台登录
     public function login()
     {
+        
+    }
+    //后台退出登录
+    public function logout()
+    {
         return view('admin.login');
     }
     

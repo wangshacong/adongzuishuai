@@ -19,6 +19,8 @@
 //后台页面
 //登录页面
 Route::get('admin/login', 'Admin\AdminController@login');
+//对出登录
+Route::get('admin/logout', 'Admin\AdminControler@logout');
 //首页
 Route::get('admin', 'Admin\AdminController@index');
 //文章列表
