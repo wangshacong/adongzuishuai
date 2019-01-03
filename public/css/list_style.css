@@ -488,7 +488,7 @@
 	line-height: 30px; font-size: 14px;
 }
 .ranking ul li {
-	height: 30px; overflow: hidden; vertical-align: middle; white-space: nowrap; -ms-word-break: keep-all; -ms-text-overflow: ellipsis; counter-increment: mycounter; -o-text-overflow: ellipsis; -moz-binding: url(ellipsis.xml#ellipsis);
+	height: 30px; overflow: hidden; vertical-align: middle; white-space: nowrap; -ms-word-break: keep-all; -ms-text-overflow: ellipsis; counter-increment: mycounter; -o-text-overflow: ellipsis; -moz-binding: url(ellipsis.xml#ellipsis);margin-top: 25px;
 }
 .ranking ul li::before {
 	color: rgb(218, 218, 218); font-weight: 500; content: counter(mycounter);
