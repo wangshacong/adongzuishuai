@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         $fenlei = Fenlei::all();
         $article = Article::orderBy('id','desc')->where('fenlei_id','=',$id)->paginate(7);
-        return view('news.list',compact('article','fenlei'));
+        return view('news.list',compact('article','fenlei','id'));
     }
 
     //内容页

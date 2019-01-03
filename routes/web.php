@@ -15,6 +15,17 @@
 //     return view('welcome');
 // });
 
+
+//后台页面
+//首页
+Route::get('admin', 'Admin\AdminController@index');
+//文章列表
+Route::get('news1', 'Admin\AdminController@news1index');
+//文章添加
+//文章修改
+
+
+//前台页面
 //首页
 Route::get('/', 'HomeController@index');
 //列表页

@@ -9,6 +9,6 @@ class Article extends Model
     //
     public function fenlei()
     {
-        return $this->hasMany('App\Fenlei');
+        return $this->belongsTo('App\Fenlei');
     }
 }

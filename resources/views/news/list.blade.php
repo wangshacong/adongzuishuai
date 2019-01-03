@@ -13,7 +13,7 @@
 		var title="融资";
 
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<meta name="Copyright" content="Techweb版权所有" />
 	<meta http-equiv="Cache-Control" content="no-transform" />
 	<link href="/images/favicon.ico" rel="shortcut icon" type="images/x-icon" />
@@ -35,17 +35,13 @@
 			<div class="channel_l">
 				<!--筛选 start-->
 				<!--焦点图start-->
-				
+
 
 
 				<!--焦点图end-->
 				<div id="wp" class="shaixuan">
 					<ul>
-						<li class="on"><a href="http://www.xunjk.com/xinwen/">最新文章</a></li>
-						<li><a href="http://www.xunjk.com/xinwen/rongzi/">融资</a></li>
-						<li><a href="http://www.xunjk.com/xinwen/chuangxin/">创新</a></li>
-						<li><a href="http://www.xunjk.com/xinwen/touzi/">投资</a></li>
-						<li><a href="http://www.xunjk.com/xinwen/gongsi/">公司</a></li>
+						<li class="on"><a href="fenlei/{{$id}}">最新文章</a></li>
 
 					</ul>
 				</div>

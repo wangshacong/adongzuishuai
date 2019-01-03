@@ -178,7 +178,7 @@
 		</script>
 	</div>
 
-	<div class="con_box">
+	{{-- <div class="con_box">
 		<!--移动互联 start-->
 		<div class="mobile_web">
 			<h2 class="tit2"><a href="http://www.xunjk.com/xinwen/gongsi/">公司</a><em></em><span class="more"><a href="http://www.xunjk.com/xinwen/gongsi/">更多</a></span></h2>
@@ -791,7 +791,7 @@
 			<!--手机游戏 end-->
 		</div>
 
-	</div>
+	</div> --}}
 	<!--底部 start-->
 
 	<!--底部 start-->

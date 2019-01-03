@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Article;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Faker\Provider\lv_LV\Color;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -16,7 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         //
-        echo "admin";
+        return view('admin.admin');
     }
 
     /**
@@ -24,6 +25,14 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //第一个网站的文章列表页
+    public function news1index()
+    {
+        $article = Article::orderBy('id','desc')->paginate(8);
+        return view('admin.article.index',compact('article'));
+    }
+
     public function create()
     {
         //

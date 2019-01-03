@@ -86,31 +86,24 @@
                     <p>{{$v['content']}}</p>
                     <!---文章end-->
                 </div>
-                @endforeach
+                
 
                 <div class="relative_news">
                     <h2 class="tit2">您可能也感兴趣:</h2>
                     <ul>
 
-
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66891.html" target="_blank">能擦玻璃能炒菜还能说会道
-                                机器人做餐...</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66890.html" target="_blank">限购最严城市珠海正降低门槛
-                                松绑意义...</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66887.html" target="_blank">美股“寒潮”来袭
-                                股三大股指全线低开 </a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66883.html" target="_blank">一级公路、二级公路将逐步有序停止收费</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66882.html" target="_blank">全国首套房贷款平均利率为5.71%
-                                同比上升6.53%</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66880.html" target="_blank">多因素致使估值倒挂
-                                三类投资机会值得关注</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66877.html" target="_blank">今年减税规模远超预期
-                                更大规模减税仍...</a></li>
-                        <li><a href="http://www.xunjk.com/xinwen/rongzi/2018/1221/66876.html" target="_blank">不当资产现金交易年末激增
-                                防范利益侵...</a></li>
+                        <?php
+                            $zuixin = \DB::Table('articles')->orderBy('id','desc')->where('fenlei_id',$v->fenlei_id)->limit(10)->get();
+                            
+                        ?>
+                        @foreach($zuixin as $val)
+                        <li><a href="content/{{$val->id}}" target="_blank">{{$val->title}}</a></li>
+                        @endforeach
+                        
                     </ul>
                 </div>
                 <!---您可能感兴趣end-->
+                @endforeach
                 <div class="partake" style="margin-bottom:3px">
                     <div class="partake_btn">
 
