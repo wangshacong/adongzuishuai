@@ -13,7 +13,7 @@ html{
 }
 body{
 	width: 100%;
-	background:tan ;
+	background:darkgray ;
     /*background-image: url(../images/a.jpg);
     background-repeat: no-repeat;
     background-size: cover;*/
@@ -281,7 +281,7 @@ body{
 	/*height: 800px;*/
 }
 .wrapper .left-nav{
-	background-color: red;
+	background-color: gray;
     color: #FFF;
     display: table-cell;
     float: none!important;
