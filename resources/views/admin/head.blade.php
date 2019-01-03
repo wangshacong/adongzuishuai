@@ -34,7 +34,7 @@
 							<a href="">切换帐号</a>
 						</dd>
 						<dd>
-							<a href="admin/login">退出</a>
+							<a href="admin/logout">退出</a>
 						</dd>
 					</dl>
 				</li>
