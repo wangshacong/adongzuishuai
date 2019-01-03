@@ -18,11 +18,13 @@
 
 //后台页面
 //登录页面
+Route::get('admin/login', 'Admin\AdminController@login');
 //首页
 Route::get('admin', 'Admin\AdminController@index');
 //文章列表
 Route::get('news1', 'Admin\AdminController@news1index');
 //文章添加
+Route::get('news1/create', 'Admin\AdminController@create');
 //文章修改
 //文章删除
 Route::get('news1/{id}/destroy', 'Admin\AdminController@destroy');
