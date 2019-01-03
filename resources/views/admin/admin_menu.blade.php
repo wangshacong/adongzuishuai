@@ -4,7 +4,7 @@
             <div id="side-nav">
                 <ul id="nav">
                     <li class="list" current>
-                        <a href="./index.html">
+                        <a href="admin">
                             <i class="iconfont">&#xe761;</i> 欢迎页面
                             <i class="iconfont nav_right">&#xe697;</i>
                         </a>
@@ -16,7 +16,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="admin/user">
+                                <a href="/admin/user">
                                     <i class="iconfont">&#xe6a7;</i> 管理员列表
                                 </a>
                             </li>
@@ -48,7 +48,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="news1"><i class="iconfont">&#xe6a7;</i> 文章列表 </a>
+                                <a href="/admin/news1"><i class="iconfont">&#xe6a7;</i> 文章列表 </a>
                             </li>
                             <li>
                                 <a href="member-shenghe.html"><i class="iconfont">&#xe6a7;</i> 文章修改 </a>

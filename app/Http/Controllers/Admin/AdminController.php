@@ -35,11 +35,19 @@ class AdminController extends Controller
         return view('admin.user.index', compact('user'));
      }
 
+     //用户添加页
+     public function usercreate()
+     {
+         echo '用户添加';
+     }
+
 
     //第一个网站的文章列表页
     public function news1index()
     {
         $article = Article::orderBy('id','desc')->paginate(8);
+        $a = \Session::all();
+        dump($a);
         return view('admin.article.index',compact('article'));
     }
 
@@ -104,7 +112,14 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-        echo 22;
+        $article = Article::find($id);
+        if($article->delete())
+        {
+            return back()->with('success','删除成功');
+        } else {
+            return back()->with('error','删除失败');
+        }
+    
     }
 
     //后台登录

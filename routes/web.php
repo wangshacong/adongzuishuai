@@ -26,14 +26,16 @@ Route::get('admin/logout', 'Admin\AdminController@logout');
 //首页
 Route::get('admin', 'Admin\AdminController@index');
 //用户列表
-Route::get('admin/user', 'Admin\AdminController@userindex');
+Route::get('/admin/user', 'Admin\AdminController@userindex');
+//用户添加
+Route::get('/admin/user/create', 'Admin\AdminController@usercreate');
 //文章列表
-Route::get('news1', 'Admin\AdminController@news1index');
+Route::get('/admin/news1', 'Admin\AdminController@news1index');
 //文章添加
-Route::get('news1/create', 'Admin\AdminController@create');
+Route::get('/admin/news1/create', 'Admin\AdminController@create');
 //文章修改
 //文章删除
-Route::get('news1/{id}/destroy', 'Admin\AdminController@destroy');
+Route::get('/admin/news1/{id}/destroy', 'Admin\AdminController@destroy');
 
 
 //前台页面
