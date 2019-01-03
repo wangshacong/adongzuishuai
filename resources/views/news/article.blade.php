@@ -86,7 +86,7 @@
                     <p>{{$v['content']}}</p>
                     <!---文章end-->
                 </div>
-
+                
 
                 <div class="relative_news">
                     <h2 class="tit2">您可能也感兴趣:</h2>
@@ -99,7 +99,7 @@
                         @foreach($zuixin as $val)
                         <li><a href="content/{{$val->id}}" target="_blank">{{$val->title}}</a></li>
                         @endforeach
-
+                        
                     </ul>
                 </div>
                 <!---您可能感兴趣end-->
@@ -140,7 +140,8 @@
                     <h2 class="tit">今日热点</h2>
                     <div class="hotpot_con">
                         @foreach($redian as $v)
-                        <div class="hotpot_list"><a href="fenlei/{{$v->id}}" target="_blank"><img src="{{$v->news_pic}}"
+                        <div class="hotpot_list"><a href="fenlei/{{$v->id}}" target="_blank"><img
+                                    src="{{$v->news_pic}}"
                                     alt="" />
                                 <h4>{{$v->title}}</h4>
                             </a>
