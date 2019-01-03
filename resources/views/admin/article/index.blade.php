@@ -5,7 +5,7 @@
 <div class="wrapper">
     <!-- 左侧主体开始 -->
     @include('admin.admin_menu')
-    <!-- 左侧主体结束 -->
+    <!-- 左侧主体开始 -->
     <!-- 右侧主体开始 -->
     <?php
 //dump($article);
@@ -90,20 +90,9 @@
 									<a style="text-decoration:none" onclick="member_password('修改密码','member-password.html','10001','600','400')" href="javascript:;" title="修改密码">
 										<i class="layui-icon">&#xe631;</i>
 									</a>-->
-                            <a title="删除" href="news1/{{$v['id']}}/destroy" onclick="member_del(this,'1')" style="text-decoration:none">
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
-                            <script language="JavaScript">             
-                                    function delete_confirm(e) 
-                                    {
-                                        if (event.srcElement.outerText == "删除") 
-                                        {
-                                            event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
-                                        }
-                                    }
-                                    document.onclick = delete_confirm;
-                                    </script>
-                                    <a href="news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>

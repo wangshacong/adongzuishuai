@@ -33,9 +33,11 @@ class AdminController extends Controller
         return view('admin.article.index',compact('article'));
     }
 
+    //文章添加
     public function create()
     {
         //
+        return view('admin.article.create');
     }
 
     /**
@@ -93,6 +95,12 @@ class AdminController extends Controller
     {
         //
         echo 22;
+    }
+
+    //后台登录
+    public function login()
+    {
+        return view('admin.login');
     }
     
 }
