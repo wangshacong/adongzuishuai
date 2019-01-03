@@ -19,10 +19,14 @@
 //后台页面
 //登录页面
 Route::get('admin/login', 'Admin\AdminController@login');
-//对出登录
-Route::get('admin/logout', 'Admin\AdminControler@logout');
+//登录验证
+Route::post('/admin/dologin', 'Admin\AdminController@dologin');
+//退出登录
+Route::get('admin/logout', 'Admin\AdminController@logout');
 //首页
 Route::get('admin', 'Admin\AdminController@index');
+//用户列表
+Route::get('admin/user', 'Admin\AdminController@userindex');
 //文章列表
 Route::get('news1', 'Admin\AdminController@news1index');
 //文章添加

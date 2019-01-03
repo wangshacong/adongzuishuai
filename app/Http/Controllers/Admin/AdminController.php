@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
 use App\Article;
 use Illuminate\Http\Request;
 use Faker\Provider\lv_LV\Color;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -26,6 +28,14 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     
+     //用户列表页
+     public function userindex()
+     {
+        $user = User::orderBy('id','desc')->paginate(4);
+        return view('admin.user.index', compact('user'));
+     }
+
+
     //第一个网站的文章列表页
     public function news1index()
     {
@@ -33,7 +43,7 @@ class AdminController extends Controller
         return view('admin.article.index',compact('article'));
     }
 
-    //文章添加
+    //第一个网站文章添加
     public function create()
     {
         //
@@ -100,7 +110,23 @@ class AdminController extends Controller
     //后台登录
     public function login()
     {
-        
+
+    }
+
+    //登录验证
+    public function dologin(Request $request)
+    {
+        echo 22;
+        $user = User::where('user_name',$request->username)->first();
+        // dump($user);
+        if(!$user){
+            return back();
+        }else if(Hash::check($request->password, $user->passwd)) {
+            session(['username' => $user->user_name, 'id' => $user->id]);
+            return view('admin');
+        }else {
+            return back();
+        }
     }
     //后台退出登录
     public function logout()

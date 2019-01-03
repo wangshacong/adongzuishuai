@@ -16,7 +16,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="member-list.html">
+                                <a href="admin/user">
                                     <i class="iconfont">&#xe6a7;</i> 管理员列表
                                 </a>
                             </li>

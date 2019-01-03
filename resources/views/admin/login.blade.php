@@ -18,7 +18,7 @@
 		<div class="login-logo">
 			<h1>X-ADMIN V1.1</h1></div>
 		<div class="login-box">
-			<form class="layui-form layui-form-pane" action="">
+			<form class="layui-form layui-form-pane" action="/admin/dologin" method="post">
 
 				<h3>登录你的帐号</h3>
 				<label class="login-title" for="username">帐号</label>
@@ -37,10 +37,12 @@
 				</div>
 				<div class="form-actions">
 					<button class="btn btn-warning pull-right" lay-submit lay-filter="login" type="submit">登录</button>
+					
 					<div class="forgot">
 						<a href="#" class="forgot">忘记帐号或者密码</a>
 					</div>
 				</div>
+				{{csrf_field()}}
 			</form>
 		</div>
 		<div class="bg-changer">
@@ -63,7 +65,7 @@
 			<div class="bg-out"></div>
 			<div id="changer-set"><i class="iconfont">&#xe696;</i></div>
 		</div>
-		<script>
+		{{-- <script>
 			$(function() {
 				layui.use('form', function() {
 					var form = layui.form();
@@ -76,7 +78,7 @@
 					});
 				});
 			})
-		</script>
+		</script> --}}
 		<script>
 			//百度统计可去掉
 			var _hmt = _hmt || [];
