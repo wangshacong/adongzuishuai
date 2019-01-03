@@ -92,15 +92,7 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+        echo 22;
     }
     
-    public function home(){
-        // echo "<h1>亚强真帅啊！！</h1>";
-        // echo "<h1>阿栋真帅啊！！</h1>";
-        // echo "<h1>阿强真帅啊！！</h1>";
-        echo "<h1>金阳真帅啊！！</h1>";
-    }
-    public function woaifanaomen(){
-        echo "<h1>范澳门俺爱你</h1>";
-    }
 }
