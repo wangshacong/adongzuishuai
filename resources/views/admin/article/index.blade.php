@@ -102,8 +102,10 @@
                                         }
                                     }
                                     document.onclick = delete_confirm;
-                                    </script>
-                                    <a href="news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
+                            </script>
+                                    <a href="news1/{{$v['id']}}/destroy" onClick="delete_confirm">
+                                        <i class="">&#xe640;</i>
+                                    </a>
 
                         </td>
                     </tr>
