@@ -71,7 +71,7 @@
                     <tr>
                         <!--<td><input type="checkbox" value="1" name=""></td>-->
                         <td>{{$v['id']}}</td>
-                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->">{{$v['title']}}</u></td>
+                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->"><a href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></u></td>
                         <td>{{$v['zuozhe']}}</td>
                         <td>{{$v->fenlei['fenlei_name']}}</td>
                         <td>{{$v['dianji']}}</td>
@@ -103,6 +103,9 @@
                                     }
                                     document.onclick = delete_confirm;
                                     </script>
+                                    <a title="编辑" href="/admin/news1/{{$v['id']}}/edit">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
                                     <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>

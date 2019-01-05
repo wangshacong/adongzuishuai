@@ -60,9 +60,9 @@
                 <h1>{{$v['title']}}</h1>
                 <div class="article_info">
                     <div class="infos">
-                        <span class="time">2018-12-21 15:48:33</span>
-                        <span class="from">来源: <a href="#" target="_blank">人民日报海外版 </a></span>
-                        <span class="author">作者:{{$v['zuozhe']}}</span>
+                        <span class="time">{{$v['created_at']}}</span>
+                        {{-- <span class="from">来源: <a href="#" target="_blank">人民日报海外版 </a></span> --}}
+                        <span class="author">来源:{{$v['zuozhe']}}</span>
                     </div>
                     <div class="size_share" style="display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;"><span
                             class="fontsize"><a href="javascript:fontSize(20)" onclick="document.getElementById('content').className = 'style1';"
@@ -83,7 +83,11 @@
                 <div id="content">
                     <!---文章开始-->
                     <p align="center"><img align="" alt="" border="0" src="{{$v['news_pic']}}" width="550" /></p>
-                    <p>{{$v['content']}}</p>
+                    
+                    <?php
+                        dump($v['content']);
+                        echo "<p>{$v['content']}</p>";
+                    ?>
                     <!---文章end-->
                 </div>
                 

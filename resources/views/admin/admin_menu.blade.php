@@ -17,29 +17,14 @@
                         <ul class="sub-menu">
                             <li>
                                 <a href="/admin/user">
-                                    <i class="iconfont">&#xe6a7;</i> 管理员列表
+                                    <i class="iconfont">&#xe6a7;</i> 用户列表
                                 </a>
                             </li>
                             <li>
-                                <a href="member-del.html">
-                                    <i class="iconfont">&#xe6a7;</i> 销售人员列表
+                                <a href="/admin/user/create">
+                                    <i class="iconfont">&#xe6a7;</i> 添加用户
                                 </a>
                             </li>
-                            <li>
-                                <a href="member-level.html">
-                                    <i class="iconfont">&#xe6a7;</i> 会员列表
-                                </a>
-                            </li>
-                            <li>
-                                <a href="member-kiss.html">
-                                    <i class="iconfont">&#xe6a7;</i> 媒介主列表
-                                </a>
-                            </li>
-                            <!--<li>
-									<a href="member-view.html">
-										<i class="iconfont">&#xe6a7;</i> 浏览记录
-									</a>
-								</li>-->
                         </ul>
                     </li>
                     <li class="list">
@@ -50,11 +35,12 @@
                             <li>
                                 <a href="/admin/news1"><i class="iconfont">&#xe6a7;</i> 文章列表 </a>
                             </li>
+                            
                             <li>
-                                <a href="member-shenghe.html"><i class="iconfont">&#xe6a7;</i> 文章修改 </a>
+                                <a href="/admin/news1/create"><i class="iconfont">&#xe6a7;</i> 文章添加 </a>
                             </li>
                             <li>
-                                <a href="member-shenghezhong.html"><i class="iconfont">&#xe6a7;</i> 文章添加 </a>
+                                <a href="/admin/news1/edit"><i class="iconfont">&#xe6a7;</i> 文章修改 </a>
                             </li>
                         </ul>
                     </li>
