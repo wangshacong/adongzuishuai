@@ -104,8 +104,12 @@ class AdminController extends Controller
         return view('admin.article.index',compact('article','fenlei'));
     }
 
-       // return view('admin.article.create', compact('fenlei'));
-
+    //文章添加
+    public function news1create()
+    {
+        $fenlei = Fenlei::all();
+        return view('admin.article.create', compact('fenlei'));
+    }
     public function news1shore(Request $request)
     {
         $zuozhe = \Session::get('username');

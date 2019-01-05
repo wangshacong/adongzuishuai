@@ -43,7 +43,7 @@ Route::get('admin/logout', 'Admin\AdminController@logout');
     //文章列表
     Route::get('/admin/news1', 'Admin\AdminController@news1index');
     //文章添加页
-    Route::get('/admin/news1/create', 'Admin\AdminController@create');
+    Route::get('/admin/news1/create', 'Admin\AdminController@news1create');
     //文章添加
     Route::post('/admin/news1/shore', 'Admin\AdminController@news1shore');
     //文章修改页
