@@ -100,21 +100,12 @@ class AdminController extends Controller
     public function news1index()
     {
         $article = Article::orderBy('id','desc')->paginate(8);
-        $a = \Session::all();
-        dump($a);
-        return view('admin.article.index',compact('article'));
-    }
-
-    //第一个网站文章添加页面
-    public function create()
-    {
-        //
         $fenlei = Fenlei::all();
-        return view('admin.article.create', compact('fenlei'));
+        return view('admin.article.index',compact('article','fenlei'));
     }
 
+       // return view('admin.article.create', compact('fenlei'));
 
-    //文章添加
     public function news1shore(Request $request)
     {
         $zuozhe = \Session::get('username');
@@ -234,7 +225,6 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-
     //后台登录
     public function login()
     {
@@ -257,6 +247,7 @@ class AdminController extends Controller
         }else {
             return back()->with('error','用户名或密码不正确');
         }
+        
     }
     //后台退出登录
     public function logout(Request $request)
