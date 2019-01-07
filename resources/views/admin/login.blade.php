@@ -37,9 +37,7 @@
 				</div>
 				<div class="form-actions">
 					<button class="btn btn-warning pull-right" lay-submit lay-filter="login" type="submit">登录</button>
-					
 					<div class="forgot">
-						<a href="#" class="forgot">忘记帐号或者密码</a>
 					</div>
 				</div>
 				{{csrf_field()}}
@@ -65,20 +63,7 @@
 			<div class="bg-out"></div>
 			<div id="changer-set"><i class="iconfont">&#xe696;</i></div>
 		</div>
-		{{-- <script>
-			$(function() {
-				layui.use('form', function() {
-					var form = layui.form();
-					//监听提交
-					form.on('submit(login)', function(data) {
-						layer.msg(JSON.stringify(data.field), function() {
-							location.href = 'index.html'
-						});
-						return false;
-					});
-				});
-			})
-		</script> --}}
+		
 		<script>
 			//百度统计可去掉
 			var _hmt = _hmt || [];

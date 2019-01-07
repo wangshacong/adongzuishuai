@@ -13,6 +13,26 @@
 		<script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
 		<script src="/lib/layui/layui.js" charset="utf-8"></script>
 		<script type="text/javascript" src="/js/xadmin.js"></script>
+		<style>
+			.int{ height: 30px; text-align: left; width: 600px; }
+			label{ width: 200px; margin-left: 20px; }
+			.high{ color: red; }
+			.msg{ font-size: 13px; }
+			.onError{ color: red; }
+			.onSuccess{ color: green; }
+			.inputfile {
+				{{-- opacity: 0; --}}
+				{{-- position:absolute;clip:rect(0 0 0 0); --}}
+				z-index: -11111;  width: 0px;  height: 1px;
+				margin:0 auto;
+			}
+			.filepath {
+				{{-- opacity: 0; --}}
+				{{-- position:absolute;clip:rect(0 0 0 0); --}}
+				z-index: -11111;  width: 0px;  height: 1px;
+				margin:0 auto;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -34,7 +54,7 @@
 							<a href="">切换帐号</a>
 						</dd>
 						<dd>
-							<a href="admin/logout">退出</a>
+							<a href="/admin/logout">退出</a>
 						</dd>
 					</dl>
 				</li>

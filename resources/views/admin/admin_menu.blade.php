@@ -4,44 +4,49 @@
             <div id="side-nav">
                 <ul id="nav">
                     <li class="list" current>
-                        <a href="admin">
+                        <a href="/admin">
                             <i class="iconfont">&#xe761;</i> 欢迎页面
                             <i class="iconfont nav_right">&#xe697;</i>
                         </a>
                     </li>
+                    
                     <li class="list">
                         <a href="javascript:;">
-                            <i class="iconfont">&#xe70b;</i> 会员管理
+                            <i class="iconfont">&#xe70b;</i> 用户管理
                             <i class="iconfont nav_right">&#xe697;</i>
                         </a>
                         <ul class="sub-menu">
                             <li>
                                 <a href="/admin/user">
-                                    <i class="iconfont">&#xe6a7;</i> 管理员列表
+                                    <i class="iconfont">&#xe6a7;</i> 用户列表
                                 </a>
                             </li>
                             <li>
-                                <a href="member-del.html">
-                                    <i class="iconfont">&#xe6a7;</i> 销售人员列表
+                                <a href="/admin/user/create">
+                                    <i class="iconfont">&#xe6a7;</i> 添加用户
                                 </a>
                             </li>
-                            <li>
-                                <a href="member-level.html">
-                                    <i class="iconfont">&#xe6a7;</i> 会员列表
-                                </a>
-                            </li>
-                            <li>
-                                <a href="member-kiss.html">
-                                    <i class="iconfont">&#xe6a7;</i> 媒介主列表
-                                </a>
-                            </li>
-                            <!--<li>
-									<a href="member-view.html">
-										<i class="iconfont">&#xe6a7;</i> 浏览记录
-									</a>
-								</li>-->
                         </ul>
                     </li>
+                    <li class="list">
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe6a3;</i>分类管理 <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu" style="display:none">
+                            <li>
+                                <a href="/admin/sort"><i class="iconfont">&#xe6a7;</i>分类列表 </a>
+                            </li>
+                            <li>
+                                <a href="/admin/sort/create"><i class="iconfont">&#xe6a7;</i> 添加分类 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list" current>
+                            <a href="/admin/article/create">
+                                <i class="iconfont">&#xe761;</i> 发布新闻
+                                <i class="iconfont nav_right">&#xe697;</i>
+                            </a>
+                        </li>
                     <li class="list">
                         <a href="javascript:;">
                             <i class="iconfont">&#xe6a3;</i>news1<i class="iconfont nav_right">&#xe697;</i>
@@ -50,36 +55,14 @@
                             <li>
                                 <a href="/admin/news1"><i class="iconfont">&#xe6a7;</i> 文章列表 </a>
                             </li>
+                            
                             <li>
-                                <a href="member-shenghe.html"><i class="iconfont">&#xe6a7;</i> 文章修改 </a>
+                                <a href="/admin/news1/create"><i class="iconfont">&#xe6a7;</i> 文章添加 </a>
                             </li>
-                            <li>
-                                <a href="member-shenghezhong.html"><i class="iconfont">&#xe6a7;</i> 文章添加 </a>
-                            </li>
+                            
                         </ul>
                     </li>
-                    <li class="list">
-                        <a href="javascript:;">
-                            <i class="iconfont">&#xe6a3;</i>自媒体稿件管理 <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu" style="display:none">
-                            <li>
-                                <a href="Media-quanbu.html"><i class="iconfont">&#xe6a7;</i> 全部稿件 </a>
-                            </li>
-                            <li>
-                                <a href="Media-shenghe.html"><i class="iconfont">&#xe6a7;</i> 待审核稿件 </a>
-                            </li>
-                            <li>
-                                <a href="Media-shenghezhong.html"><i class="iconfont">&#xe6a7;</i> 审核中稿件 </a>
-                            </li>
-                            <li>
-                                <a href="Media-huilian.html"><i class="iconfont">&#xe6a7;</i> 回链稿件 </a>
-                            </li>
-                            <li>
-                                <a href="Media-jugao.html"><i class="iconfont">&#xe6a7;</i>拒稿稿件</a>
-                            </li>
-                        </ul>
-                    </li>
+                   
                     <li class="list">
                         <a href="javascript:;">
                             <i class="iconfont">&#xe6a3;</i>代发稿件管理

@@ -33,8 +33,8 @@
 						</div>
 					</form>-->
             <xblock>
-                <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>-->
-                <a href="/admin/news1/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
+                <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>--><button
+                    class="layui-btn"><a href="news1/create"><i class="layui-icon">&#xe608;</i>添加</a></button>
                 <!--<span class="x-right" style="line-height:40px">共有数据：88 条</span>-->
             </xblock>
             <table class="layui-table">
@@ -71,7 +71,7 @@
                     <tr>
                         <!--<td><input type="checkbox" value="1" name=""></td>-->
                         <td>{{$v['id']}}</td>
-                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->">{{$v['title']}}</u></td>
+                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->"><a href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></u></td>
                         <td>{{$v['zuozhe']}}</td>
                         <td>{{$v->fenlei['fenlei_name']}}</td>
                         <td>{{$v['dianji']}}</td>
@@ -90,18 +90,23 @@
 									<a style="text-decoration:none" onclick="member_password('修改密码','member-password.html','10001','600','400')" href="javascript:;" title="修改密码">
 										<i class="layui-icon">&#xe631;</i>
 									</a>-->
-                            {{-- <a title="删除" href="#" onclick="member_del(this,'1')" style="text-decoration:none">
+                            <a title="删除" href="news1/{{$v['id']}}/destroy" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
-                            </a> --}}
-                            <script language="JavaScript">
-                                function delete_confirm(e) {
-                                    if (event.srcElement.innerHTML == "删除") {
-                                        event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
+                            </a>
+                            <script language="JavaScript">             
+                                    function delete_confirm(e) 
+                                    {
+                                        if (event.srcElement.outerText == "删除") 
+                                        {
+                                            event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
+                                        }
                                     }
-                                }
-                                document.onclick = delete_confirm;
-                            </script>
-                            <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
+                                    document.onclick = delete_confirm;
+                                    </script>
+                                    <a title="编辑" href="/admin/news1/{{$v['id']}}/edit">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                    <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>

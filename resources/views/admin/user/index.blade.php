@@ -34,7 +34,7 @@
 					</form>-->
             <xblock>
                 <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>-->
-                <a href="/admin/news1/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
+                <a href="/admin/user/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
                 <!--<span class="x-right" style="line-height:40px">共有数据：88 条</span>-->
             </xblock>
             <table class="layui-table">
@@ -81,25 +81,29 @@
                             <a title="删除" href="news1/{{$v['id']}}/destroy" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
-                            <script language="JavaScript">             
-                                    function delete_confirm(e) 
-                                    {
-                                        if (event.srcElement.outerText == "删除") 
-                                        {
-                                            event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
-                                        }
+                            <script language="JavaScript">
+                                function delete_confirm(e) {
+                                    if (event.srcElement.outerText == "删除") {
+                                        event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
                                     }
-                                    document.onclick = delete_confirm;
-                                    </script>
-                                    <a href="news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
+                                }
+                                document.onclick = delete_confirm;
+                            </script>
+                            <a title="编辑" href="/admin/user/{{$v['id']}}/update">
+                                <i class="layui-icon">&#xe642;</i>
+                            </a>
+                            <a title="删除" href="/admin/user/{{$v['id']}}/destroy" onClick="delete_confirm">
+                                删除
+                                {{-- <i class="layui-icon" onClick="delete_confirm">&#xe640;</i> --}}
+                            </a>
 
                         </td>
                     </tr>
                     @endforeach
-                    
-                   
+
+
                 </tbody>
-                
+
             </table>
             {{$user->appends(request()->all())->links()}}
             <!-- 右侧内容框架，更改从这里结束 -->
