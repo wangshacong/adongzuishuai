@@ -93,25 +93,23 @@
                             {{-- <a title="删除" href="#" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a> --}}
-                            <script language="JavaScript">             
-                                    function delete_confirm(e) 
-                                    {
-                                        if (event.srcElement.outerText == "删除") 
-                                        {
-                                            event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
-                                        }
+                            <script language="JavaScript">
+                                function delete_confirm(e) {
+                                    if (event.srcElement.innerHTML == "删除") {
+                                        event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
                                     }
-                                    document.onclick = delete_confirm;
-                                    </script>
-                                    <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
+                                }
+                                document.onclick = delete_confirm;
+                            </script>
+                            <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>
                     @endforeach
-                    
-                   
+
+
                 </tbody>
-                
+
             </table>
             {{$article->appends(request()->all())->links()}}
             <!-- 右侧内容框架，更改从这里结束 -->
@@ -182,14 +180,14 @@
     });
 
     //批量删除提交
-    function delAll() {
-        layer.confirm('确认要删除吗？', function (index) {
+   // function delAll() {
+    //    layer.confirm('确认要删除吗？', function (index) {
             //捉到所有被选中的，发异步进行删除
-            layer.msg('删除成功', {
-                icon: 1
-            });
-        });
-    }
+       //     layer.msg('删除成功', {
+         //       icon: 1
+         //   });
+     //   });
+   // }
     /*用户-添加*/
     function member_add(title, url, w, h) {
         x_admin_show(title, url, w, h);
@@ -241,16 +239,16 @@
         x_admin_show(title, url, w, h);
     }
     /*用户-删除*/
-    function member_del(obj, id) {
-        layer.confirm('确认要删除吗？', function (index) {
+  //  function member_del(obj, id) {
+    //    layer.confirm('确认要删除吗？', function (index) {
             //发异步删除数据
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!', {
-                icon: 1,
-                time: 1000
-            });
-        });
-    }
+        //    $(obj).parents("tr").remove();
+         //   layer.msg('已删除!', {
+         //       icon: 1,
+          //      time: 1000
+        //    });
+   //     });
+ //   }
 </script>
 <script>
     //百度统计可去掉
