@@ -20,7 +20,6 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            {{-- <form class="layui-form" action="/admin/news1/shore" method="post" enctype="multipart/form-data"> --}}
             <form class="layui-form" action="/admin/article/shore" method="post" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
