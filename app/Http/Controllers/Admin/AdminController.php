@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use App\Fenlei;
 use App\Article;
+use App\Article2;
+use App\Mysql2Fenlei;
 use Illuminate\Http\Request;
 use Faker\Provider\lv_LV\Color;
 use App\Http\Controllers\Controller;
@@ -22,7 +24,6 @@ class AdminController extends Controller
     {
         //
         $sessioninfo=\Session::all();
-        dump($sessioninfo);
         return view('admin.admin');
     }
 
@@ -42,7 +43,6 @@ class AdminController extends Controller
      //用户添加页
      public function usercreate()
      {
-         echo '用户添加';
          return view('admin.user.create');
      }
 
@@ -62,16 +62,13 @@ class AdminController extends Controller
      //用户修改页面
      public function userupdate($id)
      {
-         echo "用户修改";
          $user= User::findOrFail($id);
-         dump($user);
          return view('admin.user.edit',compact('user'));
      }
 
      //用户提交修改
      public function useredit(Request $request,$id)
      {
-         echo "用户修改";
          $user = User::findOrFail($id);
          $user -> user_name = $request -> username;
          $user -> passwd = Hash::make($request -> passwd);
@@ -87,8 +84,62 @@ class AdminController extends Controller
      public function userdestroy($id)
      {
         $user = User::findOrFail($id);
-        dump($user);
         if ($user->delete()) {
+            return back()->with('success','删除成功');
+        } else {
+            return back()->with('error','删除失败');
+        }
+     }
+
+     //分类列表
+     public function sortindex()
+     {
+         $fenlei = Fenlei::orderBy('id','desc')->paginate(8);
+         return view('admin.sort.index',compact('fenlei'));
+     }
+
+     //分类添加页
+     public function sortCreate()
+     {
+        return view('admin.sort.create');
+     }
+
+     //分类添加
+     public function sortshore(Request $request)
+     { 
+        $fenlei = new Fenlei;
+        $fenlei->fenlei_name = $request->fenlei_name;
+        if ($fenlei->save()) {
+            return redirect('/admin/sort/')->with('success','添加成功');
+        } else {
+            return back()->with('error','添加失败');
+        }
+     }
+
+     //分类修改页
+     public function sortedit($id)
+     { 
+        $fenlei = Fenlei::findOrFail($id);
+       return view('admin.sort.edit',compact('fenlei'));
+     }
+
+     //分类修改
+     public function sortupdate(Request $request,$id)
+     { 
+        $fenlei = Fenlei::findOrFail($id);
+        $fenlei->fenlei_name = $request->fenlei_name;
+        if($fenlei->save()) {
+            return redirect('/admin/sort')->with('success','修改成功');
+        } else {
+            return back()->with('error','修改失败');
+        }
+     }
+
+     //删除分类
+     public function sortdestroy($id)
+     {
+        $fenlei = Fenlei::findOrfail($id);
+        if ($fenlei->delete()) {
             return back()->with('success','删除成功');
         } else {
             return back()->with('error','删除失败');
@@ -112,12 +163,14 @@ class AdminController extends Controller
     }
     public function news1shore(Request $request)
     {
+        
         $zuozhe = \Session::get('username');
         $content = new Article;
         $content->title = $request->title;
         $content->zuozhe = $zuozhe;
         $content->fenlei_id = $request->fenlei;
         $content->content = $request->content;
+        $content->dianji = rand(100,1000);
         if($request->hasFile('pic')){
             $content->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
         }
@@ -126,13 +179,11 @@ class AdminController extends Controller
         } else {
             return back()->with('error','发布失败');
         }
-        echo "文章添加";
     }
 
     //文章修改页
     public function news1edit($id)
     {
-        echo "文章修改页";
         $article = Article::findOrfail($id);
 
         // print_r($article);
@@ -159,7 +210,6 @@ class AdminController extends Controller
             return back()->with('error','修改失败');
         }
 
-        echo "文章修改";
 
     }
 
@@ -238,14 +288,11 @@ class AdminController extends Controller
     //登录验证
     public function dologin(Request $request)
     {
-        echo 22;
         $user = User::where('user_name',$request->username)->first();
-        // dump($user);
         if(!$user){
             return back()->with('error','用户名不存在');
         }else if(Hash::check($request->password, $user->passwd)) {
             session(['username' => $user->user_name, 'id' => $user->id]);
-            dump(22);
             session(['username'=>$user->user_name, 'id'=>$user->id]);
             return redirect('/admin')->with('success','登录成功');
         }else {
@@ -260,4 +307,52 @@ class AdminController extends Controller
         return redirect('/admin/login');
     }
     
+    //全站新闻发布页
+    public function articlecreate()
+    {
+        $fenlei = Fenlei::all();
+        return view('admin.articlecreate',compact('fenlei'));
+    }
+
+    //全站新闻发布
+    public function articleshore(Request $request)
+    {
+        //dump($request);
+        $web = $request->like;
+        dump($web);
+        if (in_array(1,$web)) {
+            $zuozhe = \Session::get('username');
+            $content = new Article;
+            $content->title = $request->title;
+            $content->zuozhe = $zuozhe;
+            $content->fenlei_id = $request->fenlei;
+            $content->content = $request->content;
+            $content->dianji = rand(100,1000);
+            if($request->hasFile('pic')){
+                $content->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
+            }
+            if($content->save()){
+                if(in_array(2,$web)){
+                    $zuozhe = \Session::get('username');
+                    $content = new Article2;
+                    $content->title = $request->title;
+                    $content->zuozhe = $zuozhe;
+                    $content->fenlei_id = $request->fenlei;
+                    $content->content = $request->content;
+                    $content->dianji = rand(100,1000);
+                    if($request->hasFile('pic')){
+                        $content->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
+                    }
+                    if($content->save()){
+                        return redirect('/admin')->with('success','发布成功');
+                    } else {
+                        return back()->with('error','发布失败');
+                    }
+                }
+        
+            } 
+        } 
+    }
 }
+
+

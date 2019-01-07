@@ -20,8 +20,8 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/news1/shore" method="post" enctype="multipart/form-data">
-            {{-- <form class="layui-form" action="/admin/mysql2" method="post" enctype="multipart/form-data"> --}}
+            {{-- <form class="layui-form" action="/admin/news1/shore" method="post" enctype="multipart/form-data"> --}}
+            <form class="layui-form" action="/admin/article/shore" method="post" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
@@ -49,7 +49,7 @@
                     <label for="file" class='btn btn-success'>Choose a file</label>
                     <img src="" id="show" width="200">
                 </div>
-                    <label class="layui-form-label">复选框</label>
+                    <label class="layui-form-label">发布至:</label>
                     <div class="layui-input-block">
                         <input type="checkbox" name="like[1]" value="1" title="网站1">
                         <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">

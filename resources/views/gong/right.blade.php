@@ -107,7 +107,7 @@
                 $paihang = \DB::Table('articles')->orderBy('dianji','desc')->limit(10)->get();  
                 $q3 = [$paihang[0],$paihang[1],$paihang[2]];
                 $h7 = [$paihang[3],$paihang[4],$paihang[5],$paihang[6],$paihang[7],$paihang[8],$paihang[9]];
-                dump($q3); 
+ 
         ?>
         <div class="ranking">
             <h2 class="tit2">排行<em></em></h2>

@@ -85,7 +85,6 @@
                     <p align="center"><img align="" alt="" border="0" src="{{$v['news_pic']}}" width="550" /></p>
                     
                     <?php
-                        dump($v['content']);
                         echo "<p>{$v['content']}</p>";
                     ?>
                     <!---文章end-->
