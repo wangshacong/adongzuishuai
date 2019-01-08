@@ -176,7 +176,7 @@
 	background-color: rgb(238, 240, 241);
 }
 .picture_text {
-	padding: 25px 0px; border-bottom-color: rgb(235, 235, 235); border-bottom-width: 1px; border-bottom-style: solid; display: flex; align-items: center; -webkit-box-align: center;
+	border-bottom-color: rgb(235, 235, 235); border-bottom-width: 1px; border-bottom-style: solid; display: flex; align-items: center; -webkit-box-align: center;
 }
 .picture_text:hover {
 	background-color: rgb(247, 247, 247);

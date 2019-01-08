@@ -45,7 +45,7 @@
                 ?>
             @foreach($fenlei_name as $val)
             <a href="/" class="logo_tw_s" title="TechWeb首页">首页</a>
-            <a href="fenlei/{{$v->fenlei_id}}">{{$val->fenlei_name}}</a> 正文
+            <a href="/fenlei/{{$v->fenlei_id}}">{{$val->fenlei_name}}</a> 正文
             @endforeach
 
             @endforeach

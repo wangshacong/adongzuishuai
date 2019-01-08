@@ -106,7 +106,11 @@
 				<h2 class="tit"><a href="fenlei/{{$vel->id}}">{{$vel->fenlei_name}}</a><span class="more"><a href="fenlei/{{$vel->id}}">更多</a></span></h2>
 				@foreach($article as $vrl)
 				<div class="product_item"><a href="article/{{$vrl->id}}" target="_blank">
+					@if($vrl->news_pic==null)
+					<img src="/images/null.jpg" alt="低价出售410万旅客信息？12306回应：为第三方泄漏" title="{{$vrl->title}}">
+					@else
 						<img src="{{$vrl->news_pic}}" alt="低价出售410万旅客信息？12306回应：为第三方泄漏" title="{{$vrl->title}}">
+					@endif
 						<h3><span>{{$vrl->title}}</span></h3>
 					</a>
 				</div>

@@ -7,7 +7,7 @@
     @include('admin.admin_menu')
     <!-- 左侧主体结束 -->
     {{-- <script src="http://code.jquery.com/jquery-latest.js"></script> --}}
-    <form method="post" action="#">
+    {{-- <form method="post" action="#">
             <div class="int">
                 <label for="name">姓名：</label>
                 <input type="text" id="name" class="required" />
@@ -24,7 +24,7 @@
                 <input type="submit" value="提交" id="send" style="margin-left: 70px;" />
                 <input type="reset" value="重置" id="res" />
             </div>
-    </form>
+    </form> --}}
         <script>
             //为表单的必填文本框添加提示信息（选择form中的所有后代input元素）
             $("form :input.required").each(function () {

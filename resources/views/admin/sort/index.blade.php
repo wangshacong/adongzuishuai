@@ -89,10 +89,10 @@
                                 }
                                 document.onclick = delete_confirm;
                             </script>
-                            <a title="编辑" href="/admin/sort/{{$v['id']}}/edit">
+                            <a title="编辑" href="/admin/sort1/{{$v['id']}}/edit">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="/admin/sort/{{$v['id']}}/destroy" onClick="delete_confirm">
+                            <a title="删除" href="/admin/sort1/{{$v['id']}}/destroy" onClick="delete_confirm">
                                 删除
                                 {{-- <i class="layui-icon" onClick="delete_confirm">&#xe640;</i> --}}
                             </a>

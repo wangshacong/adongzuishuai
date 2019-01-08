@@ -54,9 +54,14 @@
 							<a href="/article/{{$v['id']}}" target="_blank">
 								<h4>{{$v['title']}}</h4>
 							</a>
-							<p>首届中国国际进口博览会上，智能机器人正在演示自动点焊。 翁奇羽...</p>
+							
+							<div class="time_tag" >
+								 <span style="overflow:hidden; width:350px;display:block;">{{preg_replace('/<.*?>/','',$v['content'])}}</span><span>...<a href="/article/{{$v['id']}}">【详情】</a></span>
+								
+							</div>
 							<div class="time_tag">
-								<span>{{$v['created_at']}}</span>
+									<span>{{$v['created_at']}}</span>
+								
 							</div>
 						</div>
 

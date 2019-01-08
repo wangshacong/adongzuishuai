@@ -38,34 +38,71 @@ Route::get('admin/logout', 'Admin\AdminController@logout');
     Route::post('admin/user/{id}/edit', 'Admin\AdminController@useredit');
     //用户删除
     Route::get('admin/user/{id}/destroy', 'Admin\AdminController@userdestroy');
+
+    //第一个网站
     //分类列表
-    Route::get('/admin/sort','Admin\AdminController@sortindex');
+    Route::get('/admin/sort1','Admin\Sort1Controller@sortindex');
     //分类添加页面
-    Route::get('/admin/sort/create', 'Admin\AdminController@sortcreate');
+    Route::get('/admin/sort1/create', 'Admin\Sort1Controller@sortcreate');
     //分类添加
-    Route::get('/admin/sort/shore', 'Admin\AdminController@sortshore');
+    Route::get('/admin/sort1/shore', 'Admin\Sort1Controller@sortshore');
     //分类修改页
-    Route::get('/admin/sort/{id}/edit', 'Admin\AdminController@sortedit');
+    Route::get('/admin/sort1/{id}/edit', 'Admin\Sort1Controller@sortedit');
     //分类修改
-    Route::get('/admin/sort/{id}/update','Admin\AdminController@sortupdate');
+    Route::get('/admin/sort1/{id}/update','Admin\Sort1Controller@sortupdate');
     //分类删除
-    Route::get('/admin/sort/{id}/destroy','Admin\AdminController@sortdestroy');
-    //文章列表
-    Route::get('/admin/news1', 'Admin\AdminController@news1index');
-    //文章添加页
-    Route::get('/admin/news1/create', 'Admin\AdminController@news1create');
-    //文章添加
-    Route::post('/admin/news1/shore', 'Admin\AdminController@news1shore');
-    //文章修改页
-    Route::get('/admin/news1/{id}/edit','Admin\AdminController@news1edit');
-    //文章修改
-    Route::post('/admin/news1/{id}/update', 'Admin\AdminController@news1update');
-    //文章删除
-    Route::get('/admin/news1/{id}/destroy', 'Admin\AdminController@destroy');
+    Route::get('/admin/sort1/{id}/destroy','Admin\Sort1Controller@sortdestroy');
+    
+    //第一个网站
+    //新闻列表
+    Route::get('/admin/news1', 'Admin\Sort1Controller@newsindex');
+    //新闻添加页
+    Route::get('/admin/news1/create', 'Admin\Sort1Controller@newscreate');
+    //新闻添加
+    Route::post('/admin/news1/shore', 'Admin\Sort1Controller@newsshore');
+    //新闻修改页
+    Route::get('/admin/news1/{id}/edit','Admin\Sort1Controller@newsedit');
+    //新闻修改
+    Route::post('/admin/news1/{id}/update', 'Admin\Sort1Controller@newsupdate');
+    //新闻删除
+    Route::get('/admin/news1/{id}/destroy', 'Admin\Sort1Controller@destroy');
+
+    //第二个网站
+    //分类列表
+    Route::get('/admin/sort1','Admin\Sort1Controller@sortindex');
+    //分类添加页面
+    Route::get('/admin/sort1/create', 'Admin\Sort1Controller@sortcreate');
+    //分类添加
+    Route::get('/admin/sort1/shore', 'Admin\Sort1Controller@sortshore');
+    //分类修改页
+    Route::get('/admin/sort1/{id}/edit', 'Admin\Sort1Controller@sortedit');
+    //分类修改
+    Route::get('/admin/sort1/{id}/update','Admin\Sort1Controller@sortupdate');
+    //分类删除
+    Route::get('/admin/sort1/{id}/destroy','Admin\Sort1Controller@sortdestroy');
+    
+    //第二个网站
+    //新闻列表
+    Route::get('/admin/news2', 'Admin\Sort1Controller@newsindex');
+    //新闻添加页
+    Route::get('/admin/news2/create', 'Admin\Sort1Controller@newscreate');
+    //新闻添加
+    Route::post('/admin/news2/shore', 'Admin\Sort1Controller@newsshore');
+    //新闻修改页
+    Route::get('/admin/news2/{id}/edit','Admin\Sort1Controller@newsedit');
+    //新闻修改
+    Route::post('/admin/news2/{id}/update', 'Admin\Sort1Controller@newsupdate');
+    //新闻删除
+    Route::get('/admin/news2/{id}/destroy', 'Admin\Sort1Controller@destroy');
+
     //全站新闻发布页
     Route::get('/admin/article/create', 'Admin\AdminController@articlecreate');
     //全站新闻发布
     Route::post('/admin/article/shore', 'Admin\AdminController@articleshore');
+    //全站添加分类页
+    Route::get('/admin/allsort/create', 'Admin\AdminController@allsortcreate');
+    //全站添加分类
+    Route::get('/admin/allsort/shore', 'Admin\AdminController@allsortshore');
 // });
 
 

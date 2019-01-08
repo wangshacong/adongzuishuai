@@ -8,7 +8,7 @@
     <!-- 左侧主体结束 -->
     {{-- <script src="http://code.jquery.com/jquery-latest.js"></script> --}}
         
-            <form class="layui-form" action="/admin/sort/shore" method="get">
+            <form class="layui-form" action="/admin/sort1/shore" method="get">
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">分类名</label>

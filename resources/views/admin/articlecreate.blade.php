@@ -33,14 +33,28 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">选择分类</label>
                         <div class="layui-input-inline">
-                            <select name="fenlei" lay-verify="required" lay-search="" style="z-index:2;">
+                            <select name="fenlei" id="sort" lay-verify="required" lay-search="" style="z-index:2;">
                                 <option value="">请选择</option>
                                 @foreach($fenlei as $v)
-                                <option value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
+                                <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
+                    {{-- <div class="sort" style="width:100px;height:50px;border:1px solid red;">
+                        <select name="fenlei" id="sort">
+                            <option value="">请选择</option>
+                            @foreach($fenlei as $v)
+                            <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
+                    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+                    <script>
+                        $("select").click(function(){
+                            alert(233);
+                        })
+                    </script>
                 </div>
                 <div class="layui-form-item">
 
@@ -48,33 +62,33 @@
                     <label for="file" class='btn btn-success'>Choose a file</label>
                     <img src="" id="show" width="200">
                 </div>
-                    <label class="layui-form-label">发布至:</label>
+                <label class="layui-form-label">发布至:</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="like[1]" value="1" title="网站1">
+                    <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
+                    {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
+                </div>
+
+                <div class="layui-form-item" style="margin-top:50px;">
+                    <!-- 配置文件 -->
+                    新闻内容：<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+                    <!-- 编辑器源码文件 -->
+                    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:100px;"></script>
+                    <script type="text/javascript">
+                        //实例化编辑器
+                        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                        var ue = UE.getEditor('editor');
+                    </script>
+                </div>
+
+                <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[1]" value="1" title="网站1">
-                        <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
-                        {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
+                        <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
-
-                    <div class="layui-form-item" style="margin-top:50px;">
-                        <!-- 配置文件 -->
-                        新闻内容：<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-                        <!-- 编辑器源码文件 -->
-                        <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-                        <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:100px;"></script>
-                        <script type="text/javascript">
-                            //实例化编辑器
-                            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-                            var ue = UE.getEditor('editor');
-                        </script>
-                    </div>
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
-                    </div>
-                    {{csrf_field()}}
+                </div>
+                {{csrf_field()}}
             </form>
             {{-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
                 <legend>方框风格的表单集合</legend>
