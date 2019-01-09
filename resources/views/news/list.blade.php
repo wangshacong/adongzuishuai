@@ -42,7 +42,6 @@
 				<div id="wp" class="shaixuan">
 					<ul>
 						<li class="on"><a href="fenlei/{{$id}}">最新文章</a></li>
-
 					</ul>
 				</div>
 				<!--筛选 end-->
@@ -54,7 +53,6 @@
 							<a href="/article/{{$v['id']}}" target="_blank">
 								<h4>{{$v['title']}}</h4>
 							</a>
-							
 							<div class="time_tag" >
 								 <span style="overflow:hidden; width:450px;display:block;">{{preg_replace('/<.*?>/','',$v['content'])}}</span><span><a href="/article/{{$v['id']}}">【详情】</a></span>
 								

@@ -447,7 +447,7 @@
 }
 
 .picture {
-	width: 290px;
+	/* width: 290px; */
 	height: 180px;
 	overflow: hidden;
 	max-height: 180px;
@@ -2980,7 +2980,7 @@ p#YNIndex a.current:hover {
 	}
 
 	.picture {
-		width: 198px;
+		/* width: 198px; */
 		height: 123px;
 		max-height: 123px;
 		max-width: 198px;
@@ -3268,7 +3268,6 @@ huodong_box a p {
     white-space: pre;
 
 }
-
 .time_tag span:nth-child(2){
 	margin-left: 30px;
 }
