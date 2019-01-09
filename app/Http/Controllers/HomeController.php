@@ -23,7 +23,9 @@ class HomeController extends Controller
         // $zuixin = Article::whereIn('fenlei_id',$fenlei_id)->paginate(10);
         // dump($zuixin);
         // return view('news.index', compact('fenlei','zuixin'));
-        return view('news.index', compact('fenlei'));
+        $last_article = Article::orderBy('id','desc')->paginate(1);
+        // dump($last_article);
+        return view('news.index', compact('fenlei','last_article'));
     }
     
     //列表页
