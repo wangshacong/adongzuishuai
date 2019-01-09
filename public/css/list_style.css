@@ -3259,3 +3259,16 @@ huodong_box a p {
 ,.pagination>li>span:hover{
 	background: red;
 } */
+
+
+.time_tag span{
+	float: left;
+	word-break: keep-all;
+    text-overflow: ellipsis;
+    white-space: pre;
+
+}
+
+.time_tag span:nth-child(2){
+	margin-left: 30px;
+}
