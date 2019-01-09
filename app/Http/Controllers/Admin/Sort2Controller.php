@@ -2,76 +2,76 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Fenlei;
-use App\Article;
+use App\Fenlei2;
+use App\Article2;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class Sort1Controller extends Controller
+class Sort2Controller extends Controller
 {
     //
     //第一个网站的文章列表页
-    public function news1index()
+    public function newsindex()
     {
-        $article = Article::orderBy('id','desc')->paginate(8);
-        $fenlei = Fenlei::all();
-        return view('admin.article.index',compact('article','fenlei'));
+        $article = Article2::orderBy('id','desc')->paginate(8);
+        $fenlei = Fenlei2::all();
+        return view('admin.article2.index',compact('article','fenlei'));
     }
 
     //文章添加页
-    public function news1create()
+    public function newscreate()
     {
-        $fenlei = Fenlei::all();
-        return view('admin.article.create', compact('fenlei'));
+        $fenlei = Fenlei2::all();
+        return view('admin.article2.create', compact('fenlei'));
     }
     
     //文章添加
-    public function news1shore(Request $request)
+    public function newsshore(Request $request)
     {
         
         $zuozhe = \Session::get('username');
-        $content = new Article;
+        $content = new Article2;
         $content->title = $request->title;
         $content->zuozhe = $zuozhe;
         $content->fenlei_id = $request->fenlei;
         $content->content = $request->content;
         $content->dianji = rand(100,1000);
         if($request->hasFile('pic')){
-            $content->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
+            $content->news_pic = '/'.$request->pic->store('news_pic/'.date('Ymd'));
         }
         if ($content->save()) {
-            return redirect('/admin/news1')->with('success','发布成功');
+            return redirect('/admin/news2')->with('success','发布成功');
         } else {
             return back()->with('error','发布失败');
         }
     }
 
     //文章修改页
-    public function news1edit($id)
+    public function newsedit($id)
     {
-        $article = Article::findOrfail($id);
+        $article = Article2::findOrfail($id);
 
         // print_r($article);
         // die;
 
-        $fenlei = Fenlei::all();
-        return view('admin.article.edit', compact('article','fenlei'));
+        $fenlei = Fenlei2::all();
+        return view('admin.article2.edit', compact('article','fenlei'));
     }
 
     //文章修改
-    public function news1update(Request $request,$id)
+    public function newsupdate(Request $request,$id)
     {
-        $article = Article::findOrFail($id);
+        $article = Article2::findOrFail($id);
         $article->title = $request->title;
         $article->fenlei_id = $request->fenlei;
         if ($request->hasFile('pic')) {
-            $article->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
+            $article->news_pic = '/'.$request->pic->store('news_pic/'.date('Ymd'));
         }
         $article->content = $request->content;
 
         if($article->save()) {
-            return redirect('admin/news1')->with('success','修改成功');
+            return redirect('/admin/news2')->with('success','修改成功');
         } else {
             return back()->with('error','修改失败');
         }
@@ -83,7 +83,7 @@ class Sort1Controller extends Controller
     public function destroy($id)
     {
         //
-        $article = Article::find($id);
+        $article = Article2::find($id);
         if($article->delete())
         {
             return back()->with('success','删除成功');
@@ -112,7 +112,7 @@ class Sort1Controller extends Controller
        $fenlei = new Fenlei;
        $fenlei->fenlei_name = $request->fenlei_name;
        if ($fenlei->save()) {
-           return redirect('/admin/sort/')->with('success','添加成功');
+           return redirect('/admin/sort1')->with('success','添加成功');
        } else {
            return back()->with('error','添加失败');
        }
@@ -131,7 +131,7 @@ class Sort1Controller extends Controller
        $fenlei = Fenlei::findOrFail($id);
        $fenlei->fenlei_name = $request->fenlei_name;
        if($fenlei->save()) {
-           return redirect('/admin/sort')->with('success','修改成功');
+           return redirect('/admin/sort1')->with('success','修改成功');
        } else {
            return back()->with('error','修改失败');
        }
