@@ -34,7 +34,7 @@
 					</form>-->
             <xblock>
                 <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>-->
-                <a href="/admin/sort/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
+                <a href="/admin/sort1/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
                 <!--<span class="x-right" style="line-height:40px">共有数据：88 条</span>-->
             </xblock>
             <table class="layui-table">
@@ -78,7 +78,7 @@
 									<a style="text-decoration:none" onclick="member_password('修改密码','member-password.html','10001','600','400')" href="javascript:;" title="修改密码">
 										<i class="layui-icon">&#xe631;</i>
 									</a>-->
-                            <a title="删除" href="news1/{{$v['id']}}/destroy" onclick="member_del(this,'1')" style="text-decoration:none">
+                            <a title="删除" href="" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
                             <script language="JavaScript">
@@ -92,10 +92,7 @@
                             <a title="编辑" href="/admin/sort1/{{$v['id']}}/edit">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="/admin/sort1/{{$v['id']}}/destroy" onClick="delete_confirm">
-                                删除
-                                {{-- <i class="layui-icon" onClick="delete_confirm">&#xe640;</i> --}}
-                            </a>
+                            <a href="/admin/sort1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>

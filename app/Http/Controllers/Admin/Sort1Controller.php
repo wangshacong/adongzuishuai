@@ -112,7 +112,7 @@ class Sort1Controller extends Controller
        $fenlei = new Fenlei;
        $fenlei->fenlei_name = $request->fenlei_name;
        if ($fenlei->save()) {
-           return redirect('/admin/sort/')->with('success','添加成功');
+           return redirect('/admin/sort1')->with('success','添加成功');
        } else {
            return back()->with('error','添加失败');
        }

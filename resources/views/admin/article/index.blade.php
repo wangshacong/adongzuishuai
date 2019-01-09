@@ -71,7 +71,8 @@
                     <tr>
                         <!--<td><input type="checkbox" value="1" name=""></td>-->
                         <td>{{$v['id']}}</td>
-                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->"><a href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></u></td>
+                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->"><a
+                                    href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></u></td>
                         <td>{{$v['zuozhe']}}</td>
                         <td>{{$v->fenlei['fenlei_name']}}</td>
                         <td>{{$v['dianji']}}</td>
@@ -93,28 +94,26 @@
                             <a title="删除" href="news1/{{$v['id']}}/destroy" onclick="member_del(this,'1')" style="text-decoration:none">
                                 <i class="layui-icon">&#xe640;</i>
                             </a>
-                            <script language="JavaScript">             
-                                    function delete_confirm(e) 
-                                    {
-                                        if (event.srcElement.outerText == "删除") 
-                                        {
-                                            event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
-                                        }
+                            <script language="JavaScript">
+                                function delete_confirm(e) {
+                                    if (event.srcElement.outerText == "删除") {
+                                        event.returnValue = confirm("删除是不可恢复的，你确认要删除吗？");
                                     }
-                                    document.onclick = delete_confirm;
-                                    </script>
-                                    <a title="编辑" href="/admin/news1/{{$v['id']}}/edit">
-                                        <i class="layui-icon">&#xe642;</i>
-                                    </a>
-                                    <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
+                                }
+                                document.onclick = delete_confirm;
+                            </script>
+                            <a title="编辑" href="/admin/news1/{{$v['id']}}/edit">
+                                <i class="layui-icon">&#xe642;</i>
+                            </a>
+                            <a href="/admin/news1/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>
                     @endforeach
-                    
-                   
+
+
                 </tbody>
-                
+
             </table>
             {{$article->appends(request()->all())->links()}}
             <!-- 右侧内容框架，更改从这里结束 -->

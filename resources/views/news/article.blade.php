@@ -100,7 +100,7 @@
                             
                         ?>
                         @foreach($zuixin as $val)
-                        <li><a href="content/{{$val->id}}" target="_blank">{{$val->title}}</a></li>
+                        <li><a href="/article/{{$val->id}}" target="_blank">{{$val->title}}</a></li>
                         @endforeach
                         
                     </ul>
@@ -143,7 +143,7 @@
                     <h2 class="tit">今日热点</h2>
                     <div class="hotpot_con">
                         @foreach($redian as $v)
-                        <div class="hotpot_list"><a href="fenlei/{{$v->id}}" target="_blank"><img
+                        <div class="hotpot_list"><a href="/article/{{$v->id}}" target="_blank"><img
                                     src="{{$v->news_pic}}"
                                     alt="" />
                                 <h4>{{$v->title}}</h4>
