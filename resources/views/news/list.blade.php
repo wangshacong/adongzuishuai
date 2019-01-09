@@ -19,7 +19,6 @@
 	<link href="/images/favicon.ico" rel="shortcut icon" type="images/x-icon" />
 	<link href="/css/list_style.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
 	<link href="/css/base.css" type="text/css" rel="stylesheet" rev="stylesheet" media="screen" />
-
 </head>
 
 <body>
