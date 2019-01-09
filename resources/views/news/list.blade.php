@@ -56,7 +56,7 @@
 							</a>
 							
 							<div class="time_tag" >
-								 <span style="overflow:hidden; width:350px;display:block;">{{preg_replace('/<.*?>/','',$v['content'])}}</span><span>...<a href="/article/{{$v['id']}}">【详情】</a></span>
+								 <span style="overflow:hidden; width:450px;display:block;">{{preg_replace('/<.*?>/','',$v['content'])}}</span><span><a href="/article/{{$v['id']}}">【详情】</a></span>
 								
 							</div>
 							<div class="time_tag">
