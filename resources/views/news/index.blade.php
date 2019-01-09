@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="baidu_union_verify" content="e718eb0dd4320c884de414f6558fc60f">
-	<title>中国创投网- 领先的互联网消费互动媒体</title>
+	<title>上海实创新闻网</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="renderer" content="webkit" />
 	<meta name="keywords" content="互联网消费,互联网金融,互联网+,移动互联网,电子商务,手机游戏,O2O,创业创新,投资融资,智能设备,智能手机,VR及AR,AI人工智能" />
@@ -48,9 +48,10 @@
 		<!--人物 end-->
 		<!--头条 start-->
 		<div class="top_news">
-			<h1><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1225/67259.html " target="_blank">中国企业开启数字化采购时代</a></h1>
-			<p>12月18日，工业和信息化部赛迪研究院、中国国际电子商务中心研究院正式发布《中国企业电商化采购发展报告(2018)》(以下简称《报告》)。《报 </p>
-
+			@foreach($last_article as $v)
+			<h1><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1225/67259.html " target="_blank">{{$v['title']}}</a></h1>
+			<p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{preg_replace('/<.*?>/','',$v['content'])}}</p>
+			@endforeach
 		</div>
 		<!--头条 end-->
 		<div class="sydatonglan" style="text-align: center;">

@@ -69,31 +69,31 @@ Route::get('admin/logout', 'Admin\AdminController@logout');
 
     //第二个网站
     //分类列表
-    Route::get('/admin/sort1','Admin\Sort1Controller@sortindex');
+    Route::get('/admin/Sort2','Admin\Sort2Controller@sortindex');
     //分类添加页面
-    Route::get('/admin/sort1/create', 'Admin\Sort1Controller@sortcreate');
+    Route::get('/admin/sort2/create', 'Admin\Sort2Controller@sortcreate');
     //分类添加
-    Route::get('/admin/sort1/shore', 'Admin\Sort1Controller@sortshore');
+    Route::get('/admin/sort2/shore', 'Admin\Sort2Controller@sortshore');
     //分类修改页
-    Route::get('/admin/sort1/{id}/edit', 'Admin\Sort1Controller@sortedit');
+    Route::get('/admin/sort2/{id}/edit', 'Admin\Sort2Controller@sortedit');
     //分类修改
-    Route::get('/admin/sort1/{id}/update','Admin\Sort1Controller@sortupdate');
+    Route::get('/admin/sort2/{id}/update','Admin\Sort2Controller@sortupdate');
     //分类删除
-    Route::get('/admin/sort1/{id}/destroy','Admin\Sort1Controller@sortdestroy');
+    Route::get('/admin/sort2/{id}/destroy','Admin\Sort2Controller@sortdestroy');
     
     //第二个网站
     //新闻列表
-    Route::get('/admin/news2', 'Admin\Sort1Controller@newsindex');
+    Route::get('/admin/news2', 'Admin\Sort2Controller@newsindex');
     //新闻添加页
-    Route::get('/admin/news2/create', 'Admin\Sort1Controller@newscreate');
+    Route::get('/admin/news2/create', 'Admin\Sort2Controller@newscreate');
     //新闻添加
-    Route::post('/admin/news2/shore', 'Admin\Sort1Controller@newsshore');
+    Route::post('/admin/news2/shore', 'Admin\Sort2Controller@newsshore');
     //新闻修改页
-    Route::get('/admin/news2/{id}/edit','Admin\Sort1Controller@newsedit');
+    Route::get('/admin/news2/{id}/edit','Admin\Sort2Controller@newsedit');
     //新闻修改
-    Route::post('/admin/news2/{id}/update', 'Admin\Sort1Controller@newsupdate');
+    Route::post('/admin/news2/{id}/update', 'Admin\Sort2Controller@newsupdate');
     //新闻删除
-    Route::get('/admin/news2/{id}/destroy', 'Admin\Sort1Controller@destroy');
+    Route::get('/admin/news2/{id}/destroy', 'Admin\Sort2Controller@destroy');
 
     //全站新闻发布页
     Route::get('/admin/article/create', 'Admin\AdminController@articlecreate');

@@ -7,39 +7,38 @@
 			</h2>
 			<div class="friend_list">
 
-				<a href="http://www.55guanjun.com/" target="_blank">微信刷票</a>
+				<a href="http://www.gaojianba.com/" target="_blank">稿件吧</a>
 
-				<a href="https://www.mxj.com.cn" target="_blank">中国特许展</a>
+				<a href="https://www.gzscxw.com" target="_blank">广州实创新闻</a>
 
-				<a href="http://www.zcaijing.com/lidaxiao/" target="_blank">李大霄</a>
+				<a href="http://www.hzscxw.com" target="_blank">杭州实创新闻</a>
 
-				<a href="http://www.cqkxzx.net/" target="_blank">中华经济网</a>
+				<a href="http://www.tjscxw.com" target="_blank">天津实创新闻</a>
 
-				<a href="http://health.pcbaby.com.cn/" target="_blank">太平洋财富网</a>
+				<a href="http://www.zjscnews.com" target="_blank">浙江实创新闻</a>
 
-				<a href="http://news.cnhan.com/xinwen/" target="_blank">汉网</a>
+				<a href="http://www.xmscxw.com" target="_blank">厦门实创新闻</a>
 
-				<a href="http://www.258toupiao.com/ " target="_blank">投票</a>
+				<a href="http://www.njscxw.com" target="_blank">南京实创新闻</a>
 
-				<a href="http://www.mcar.com.cn/" target="_blank">我车网</a>
+				<a href="http://www.sdxscwz.com" target="_blank">山东实创新闻</a>
 
-				<a href="http://www.zhopera.com/" target="_blank">华夏财富网</a>
+				<a href="http://www.szscxw.com" target="_blank">深圳实创新闻</a>
 
-				<a href="http://www.iewzx.com/" target="_blank">中国经贸网</a>
+				<a href="http://www.bjxscwz.com" target="_blank">北京实创新闻</a>
 
-				<a href="http://www.shuapiaotop1.com/" target="_blank"> 微信刷票</a>
 
 
 			</div>
 		</div>
 		<!--合作伙伴 end-->
 		<!--版权 start-->
-		<p style="text-align: center"><br />
+		{{--  <p style="text-align: center"><br />
 			<br />
 			<span style="color: #d3d3d3"><span style="font-size: 16px"><span style="font-family: 黑体"><strong>关于本站 管理团队 版权申明 网站地图
 							联系合作 招聘信息</strong></span></span><br />
-				&nbsp;</span></p>
-		<p style="text-align: center"><span style="color: #d3d3d3">Copyright &copy; 2005-2018 </span><a href="http://www.xunjk.com/"><span
+				&nbsp;</span></p>  --}}
+		<p style="text-align: center;margin-top:30px;"><span style="color: #d3d3d3">Copyright &copy; 2005-2018 </span><a href="http://www.xunjk.com/"><span
 				 style="color: #808080">中国创投网</span></a><span style="color: #d3d3d3"> - www.xunjk.com All rights reserved</span><br />
 			<br />
 			<a href="http://www.miitbeian.gov.cn/"><span style="color: #d3d3d3">沪ICP备18004000号-7</span></a><br />

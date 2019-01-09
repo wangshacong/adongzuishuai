@@ -52,7 +52,7 @@ class AdminController extends Controller
      {
         $user = new User;
         $user->user_name = $request->username;
-        $user->passwd = $request->passwd;
+        $user->passwd = Hash::make($request -> passwd);
         if ($user -> save()) {
             return redirect('/admin/user')->with('success','添加成功');
         } else {
@@ -74,7 +74,7 @@ class AdminController extends Controller
          $user -> user_name = $request -> username;
          $user -> passwd = Hash::make($request -> passwd);
          if ($user -> save()) {
-            return back()->with('success','修改成功');
+            return redirect('/admin/user')->with('success','修改成功');
          } else {
              return back()->with('error','修改失败');
          }
