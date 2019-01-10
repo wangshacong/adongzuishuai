@@ -133,7 +133,7 @@
 
         <!--排行 start-->
         <?php
-                $paihang = \DB::Table('articles')->orderBy('dianji','desc')->limit(10)->get();  
+                $paihang = \DB::Table('articles')->orderBy('dianji','desc')->where('news_pic','<>','')->limit(10)->get();  
                 $q3 = [$paihang[0],$paihang[1],$paihang[2]];
                 $h7 = [$paihang[3],$paihang[4],$paihang[5],$paihang[6],$paihang[7],$paihang[8],$paihang[9]];
  
@@ -146,7 +146,7 @@
                                 @foreach($q3 as $v)
                                 @if(!$v->news_pic==null)
                                 <li class="paihang haegd" style="background:url({{$v->news_pic}});widht:262px;height:130px;">
-                                        <a href="article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                                    <a href="/article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a>
                                 </li>
                                 @else
                                 <li class="paihang haegd"><a href="article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a>

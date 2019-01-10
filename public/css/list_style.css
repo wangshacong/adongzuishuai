@@ -1114,7 +1114,7 @@
 
 .ranking ul li:nth-child(-n+3){
 	/* background-color: rgba(8, 8, 8, 0.6);  */
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	display: block;
 	-moz-box-shadow:0px 35px 35px #fff inset;               /* For Firefox3.6+ */
 	-webkit-box-shadow:0px 35px 35px #fff inset;            /* For Chrome5+, Safari5+ */
@@ -1125,6 +1125,7 @@
 	
 
 }
+
 
 
 
