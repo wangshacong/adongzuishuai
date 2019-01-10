@@ -1189,6 +1189,19 @@
     vertical-align: middle;
     counter-increment: mycounter;
 }
+.ranking ul li:nth-child(-n+3){
+	/* background-color: rgba(8, 8, 8, 0.6);  */
+	
+	display: block;
+	-moz-box-shadow:0px 35px 35px #fff inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow:0px 35px 35px #fff inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:0px 35px 35px #fff inset;        
+	color: #ffffff;            /* For Latest Opera */
+} 
+
+
+
+
 
 .ranking ul li::before {
     content: counter(mycounter);
