@@ -145,16 +145,16 @@
                         <ul>
                                 @foreach($q3 as $v)
                                 @if(!$v->news_pic==null)
-                                <li class="paihang" style="background:url({{$v->news_pic}});widht:262px;height:130px;"><a
-                                                href="article/{{$v->id}}" target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                                <li class="paihang haegd" style="background:url({{$v->news_pic}});widht:262px;height:130px;">
+                                        <a href="article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a>
                                 </li>
                                 @else
-                                <li class="paihang"><a href="article/{{$v->id}}" target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                                <li class="paihang haegd"><a href="article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a>
                                 </li>
                                 @endif
                                 @endforeach
                                 @foreach($h7 as $v)
-                                <li class="paihang"><a href="article/{{$v->id}}" target="_blank" title="{{$v->title}}">{{$v->title}}</a>
+                                <li class="paihang haegd"><a href="article/{{$v->id}}"  target="_blank" title="{{$v->title}}">{{$v->title}}</a></li>
                                         @endforeach
                         </ul>
 
