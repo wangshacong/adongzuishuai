@@ -1106,12 +1106,35 @@
 	-moz-binding: url(ellipsis.xml#ellipsis);
 }
 
+
+
+
+
+
+
+.ranking ul li:nth-child(-n+3){
+	/* background-color: rgba(8, 8, 8, 0.6);  */
+	margin-top: 20px;
+	display: block;
+	-moz-box-shadow:0px 35px 35px #fff inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow:0px 35px 35px #fff inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:0px 35px 35px #fff inset;        
+	color: #ffffff;            /* For Latest Opera */
+} 
+.ranking ul a:nth-child(-n+3){
+	
+
+}
+
+
+
+
+
 .ranking ul li::before {
 	color: rgb(218, 218, 218);
 	font-weight: 500;
 	content: counter(mycounter);
 }
-
 .ranking ul li:first-child::before {
 	color: rgb(246, 60, 121);
 	font-size: 17px;

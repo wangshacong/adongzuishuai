@@ -24,7 +24,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input biaotiaa">
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@
                 </div>
                 <div class="layui-form-item">
 
-                    选择图片：<input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
+                    <label class="layui-form-label">选择图片</label><input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
                     <label for="file" class='btn btn-success'>Choose a file</label>
                     <img src="" id="show" width="200">
                 </div>
@@ -71,10 +71,10 @@
 
                 <div class="layui-form-item" style="margin-top:50px;">
                     <!-- 配置文件 -->
-                    新闻内容：<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+                    <label class="layui-form-label">新闻内容</label><script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
                     <!-- 编辑器源码文件 -->
                     <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:100px;"></script>
+                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:130px;"></script>
                     <script type="text/javascript">
                         //实例化编辑器
                         //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
