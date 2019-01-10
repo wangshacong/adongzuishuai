@@ -69,7 +69,7 @@ Route::get('admin/logout', 'Admin\AdminController@logout');
 
     //第二个网站
     //分类列表
-    Route::get('/admin/Sort2','Admin\Sort2Controller@sortindex');
+    Route::get('/admin/sort2','Admin\Sort2Controller@sortindex');
     //分类添加页面
     Route::get('/admin/sort2/create', 'Admin\Sort2Controller@sortcreate');
     //分类添加

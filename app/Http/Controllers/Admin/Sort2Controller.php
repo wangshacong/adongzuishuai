@@ -96,23 +96,23 @@ class Sort2Controller extends Controller
     //分类列表
     public function sortindex()
     {
-        $fenlei = Fenlei::orderBy('id','desc')->paginate(8);
-        return view('admin.sort.index',compact('fenlei'));
+        $fenlei = Fenlei2::orderBy('id','desc')->paginate(8);
+        return view('admin.sort2.index',compact('fenlei'));
     }
 
     //分类添加页
     public function sortCreate()
     {
-       return view('admin.sort.create');
+       return view('admin.sort2.create');
     }
 
     //分类添加
     public function sortshore(Request $request)
     { 
-       $fenlei = new Fenlei;
+       $fenlei = new Fenlei2;
        $fenlei->fenlei_name = $request->fenlei_name;
        if ($fenlei->save()) {
-           return redirect('/admin/sort1')->with('success','添加成功');
+           return redirect('/admin/sort2')->with('success','添加成功');
        } else {
            return back()->with('error','添加失败');
        }
@@ -121,17 +121,17 @@ class Sort2Controller extends Controller
     //分类修改页
     public function sortedit($id)
     { 
-       $fenlei = Fenlei::findOrFail($id);
-      return view('admin.sort.edit',compact('fenlei'));
+       $fenlei = Fenlei2::findOrFail($id);
+      return view('admin.sort2.edit',compact('fenlei'));
     }
 
     //分类修改
     public function sortupdate(Request $request,$id)
     { 
-       $fenlei = Fenlei::findOrFail($id);
+       $fenlei = Fenlei2::findOrFail($id);
        $fenlei->fenlei_name = $request->fenlei_name;
        if($fenlei->save()) {
-           return redirect('/admin/sort1')->with('success','修改成功');
+           return redirect('/admin/sort2')->with('success','修改成功');
        } else {
            return back()->with('error','修改失败');
        }

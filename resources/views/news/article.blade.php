@@ -137,7 +137,7 @@
 
                 <!---今日热点start-->
                 <?php
-                    $redian = \DB::Table('articles')->orderBy('id','desc')->limit(3)->get();
+                    $redian = \DB::Table('articles')->orderBy('news_pic','desc')->limit(3)->get();
                 ?>
                 <div class="hotpot">
                     <h2 class="tit">今日热点</h2>

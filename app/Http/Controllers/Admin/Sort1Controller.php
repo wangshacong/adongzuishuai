@@ -71,7 +71,7 @@ class Sort1Controller extends Controller
         $article->content = $request->content;
 
         if($article->save()) {
-            return redirect('admin/news')->with('success','修改成功');
+            return redirect('/admin/news1')->with('success','修改成功');
         } else {
             return back()->with('error','修改失败');
         }

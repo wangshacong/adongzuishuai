@@ -49,7 +49,7 @@
 		<!--头条 start-->
 		<div class="top_news">
 			@foreach($last_article as $v)
-			<h1><a href="http://www.xunjk.com/xinwen/chuangxin/2018/1225/67259.html " target="_blank">{{$v['title']}}</a></h1>
+			<h1><a href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></h1>
 			<p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{preg_replace('/<.*?>/','',$v['content'])}}</p>
 			@endforeach
 		</div>
@@ -100,7 +100,7 @@
 			@else
 			<?php
 			 $fenlei = \DB::Table('fenleis') ->where('id',$v['id'])->get();
-			 $article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(2) -> get();
+			 $article = \DB::Table('articles') -> where('fenlei_id',$v['id']) ->where('news_pic','<>','') -> orderBy('id','desc') -> limit(2) -> get();
 			 ?>
 			@foreach($fenlei as $vel)
 			<div class="products">

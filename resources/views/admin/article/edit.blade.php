@@ -31,13 +31,18 @@
                 <div class="layui-form-item">
                     
                     <div class="layui-inline">
+                             
+                            
                         <label class="layui-form-label">选择分类</label>
+                        
                         <div class="layui-input-inline">
                             <select name="fenlei" lay-verify="required" lay-search="" style="z-index:2;">
                                 <option value="">请选择</option>
                                 @foreach($fenlei as $v)
-                                <option value="{{$v['id']}}" {{$v['id']}}=={{$article['fenlei_id']}} ? selected="selected" : " ">{{$v['fenlei_name']}}</option>
+                                <option value="{{$v['id']}}" <?php if($v['id'] == $article['fenlei_id'])echo "selected='selected'"; ?>>{{$v['fenlei_name']}}</option>
+                                
                                 @endforeach
+                                
                             </select>
                         </div>
                     </div>
