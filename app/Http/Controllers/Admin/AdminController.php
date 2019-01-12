@@ -25,7 +25,7 @@ class AdminController extends Controller
     {
         //
         $sessioninfo=\Session::all();
-        return view('admin.admin');
+        return view('cxjy_admin.admin');
     }
 
     /**
@@ -38,13 +38,13 @@ class AdminController extends Controller
      public function userindex()
      {
         $user = User::orderBy('id','desc')->paginate(4);
-        return view('admin.user.index', compact('user'));
+        return view('cxjy_admin.user.index', compact('user'));
      }
 
      //用户添加页
      public function usercreate()
      {
-         return view('admin.user.create');
+         return view('cxjy_admin.user.create');
      }
 
      //添加用户
@@ -54,7 +54,7 @@ class AdminController extends Controller
         $user->user_name = $request->username;
         $user->passwd = Hash::make($request -> passwd);
         if ($user -> save()) {
-            return redirect('/admin/user')->with('success','添加成功');
+            return redirect('/cxjy_admin/user')->with('success','添加成功');
         } else {
             return back()->with('error','添加失败'); 
         }
@@ -64,7 +64,7 @@ class AdminController extends Controller
      public function userupdate($id)
      {
          $user= User::findOrFail($id);
-         return view('admin.user.edit',compact('user'));
+         return view('cxjy_admin.user.edit',compact('user'));
      }
 
      //用户提交修改
@@ -74,11 +74,11 @@ class AdminController extends Controller
          $user -> user_name = $request -> username;
          $user -> passwd = Hash::make($request -> passwd);
          if ($user -> save()) {
-            return redirect('/admin/user')->with('success','修改成功');
+            return redirect('/cxjy_admin/user')->with('success','修改成功');
          } else {
              return back()->with('error','修改失败');
          }
-         return view('admin.user.edit',compact('user'));
+         return view('cxjy_admin.user.edit',compact('user'));
      }
 
      //用户删除
@@ -135,7 +135,7 @@ class AdminController extends Controller
     //后台登录
     public function login()
     {
-        return view('admin.login');
+        return view('cxjy_admin.login');
     }
 
     //登录验证
@@ -147,7 +147,7 @@ class AdminController extends Controller
         }else if(Hash::check($request->password, $user->passwd)) {
             session(['username' => $user->user_name, 'id' => $user->id]);
             session(['username'=>$user->user_name, 'id'=>$user->id]);
-            return redirect('/admin')->with('success','登录成功');
+            return redirect('/cxjy_admin')->with('success','登录成功');
         }else {
             return back()->with('error','用户名或密码不正确');
         }
@@ -157,14 +157,14 @@ class AdminController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
-        return redirect('/admin/login');
+        return redirect('/cxjy_admin/login');
     }
     
     //全站新闻发布页
     public function articlecreate()
     {
         $fenlei = Fenlei::all();
-        return view('admin.articlecreate',compact('fenlei'));
+        return view('cxjy_admin.articlecreate',compact('fenlei'));
     }
 
     //全站新闻发布
@@ -195,15 +195,15 @@ class AdminController extends Controller
             $content->zuozhe = $zuozhe;
             $fenlei = Fenlei::where('id',$request->fenlei)->first();
             $fenlei_name = $fenlei->fenlei_name;
-            $fenlei = Fenlei2::where('fenlei2_name',$fenlei_name)->first();
+            $fenlei = Fenlei2::where('fenlei_name',$fenlei_name)->first();
             $content->fenlei2_id = $fenlei->id;
             $content->content = $request->content;
             $content->dianji = rand(100,1000);
             if($request->hasFile('pic')){
-                $content->news_pic = '/'.$request->pic->store('news1_pic/'.date('Ymd'));
+                $content->news_pic = '/'.$request->pic->store('news2_pic/'.date('Ymd'));
             }
             if($content->save()){
-                return redirect('/admin')->with('success','发布成功');
+                return redirect('/cxjy_admin')->with('success','发布成功');
             } else {
                 return back()->with('error','发布失败');
             }
@@ -214,7 +214,7 @@ class AdminController extends Controller
      public function allsortcreate()
      {
         
-        return view('admin.sortcreate');
+        return view('cxjy_admin.sortcreate');
      }
 
      //全站添加分类
@@ -229,9 +229,9 @@ class AdminController extends Controller
         }
         if(in_array(2,$web)){
             $sort = new Fenlei2;
-            $sort->fenlei2_name = $request->fenlei_name;
+            $sort->fenlei_name = $request->fenlei_name;
             if($sort->save()){
-                return redirect('/admin')->with('success','发布成功');
+                return redirect('/cxjy_admin')->with('success','发布成功');
             } else {
                 return back()->with('error','发布失败');
             }

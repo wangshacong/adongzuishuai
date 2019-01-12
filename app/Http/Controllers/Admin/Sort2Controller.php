@@ -16,14 +16,14 @@ class Sort2Controller extends Controller
     {
         $article = Article2::orderBy('id','desc')->paginate(8);
         $fenlei = Fenlei2::all();
-        return view('admin.article2.index',compact('article','fenlei'));
+        return view('cxjy_admin.article2.index',compact('article','fenlei'));
     }
 
     //文章添加页
     public function newscreate()
     {
         $fenlei = Fenlei2::all();
-        return view('admin.article2.create', compact('fenlei'));
+        return view('cxjy_admin.article2.create', compact('fenlei'));
     }
     
     //文章添加
@@ -41,7 +41,7 @@ class Sort2Controller extends Controller
             $content->news_pic = '/'.$request->pic->store('news_pic/'.date('Ymd'));
         }
         if ($content->save()) {
-            return redirect('/admin/news2')->with('success','发布成功');
+            return redirect('/cxjy_admin/news12')->with('success','发布成功');
         } else {
             return back()->with('error','发布失败');
         }
@@ -56,7 +56,7 @@ class Sort2Controller extends Controller
         // die;
 
         $fenlei = Fenlei2::all();
-        return view('admin.article2.edit', compact('article','fenlei'));
+        return view('cxjy_admin.article2.edit', compact('article','fenlei'));
     }
 
     //文章修改
@@ -71,7 +71,7 @@ class Sort2Controller extends Controller
         $article->content = $request->content;
 
         if($article->save()) {
-            return redirect('/admin/news2')->with('success','修改成功');
+            return redirect('/cxjy_admin/news12')->with('success','修改成功');
         } else {
             return back()->with('error','修改失败');
         }
@@ -97,13 +97,13 @@ class Sort2Controller extends Controller
     public function sortindex()
     {
         $fenlei = Fenlei2::orderBy('id','desc')->paginate(8);
-        return view('admin.sort2.index',compact('fenlei'));
+        return view('cxjy_admin.sort2.index',compact('fenlei'));
     }
 
     //分类添加页
     public function sortCreate()
     {
-       return view('admin.sort2.create');
+       return view('cxjy_admin.sort2.create');
     }
 
     //分类添加
@@ -112,7 +112,7 @@ class Sort2Controller extends Controller
        $fenlei = new Fenlei2;
        $fenlei->fenlei_name = $request->fenlei_name;
        if ($fenlei->save()) {
-           return redirect('/admin/sort2')->with('success','添加成功');
+           return redirect('/cxjy_admin/sort2')->with('success','添加成功');
        } else {
            return back()->with('error','添加失败');
        }
@@ -122,7 +122,7 @@ class Sort2Controller extends Controller
     public function sortedit($id)
     { 
        $fenlei = Fenlei2::findOrFail($id);
-      return view('admin.sort2.edit',compact('fenlei'));
+      return view('cxjy_admin.sort2.edit',compact('fenlei'));
     }
 
     //分类修改
@@ -131,7 +131,7 @@ class Sort2Controller extends Controller
        $fenlei = Fenlei2::findOrFail($id);
        $fenlei->fenlei_name = $request->fenlei_name;
        if($fenlei->save()) {
-           return redirect('/admin/sort2')->with('success','修改成功');
+           return redirect('/cxjy_admin/sort2')->with('success','修改成功');
        } else {
            return back()->with('error','修改失败');
        }
@@ -140,7 +140,7 @@ class Sort2Controller extends Controller
     //删除分类
     public function sortdestroy($id)
     {
-       $fenlei = Fenlei::findOrfail($id);
+       $fenlei = Fenlei2::findOrfail($id);
        if ($fenlei->delete()) {
            return back()->with('success','删除成功');
        } else {

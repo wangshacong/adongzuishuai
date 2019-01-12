@@ -16,7 +16,7 @@ class Login
     public function handle($request, Closure $next)
     {
         if (!session('id')) {
-            return redirect('/admin/login');
+            return redirect('/cxjy_admin/login');
         }
         return $next($request);
         

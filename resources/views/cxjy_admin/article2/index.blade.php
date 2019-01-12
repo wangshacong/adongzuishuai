@@ -1,10 +1,10 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     <!-- 右侧主体开始 -->
     <?php
@@ -33,8 +33,8 @@
 						</div>
 					</form>-->
             <xblock>
-                <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>-->
-                <a href="/admin/user/create"><button class="layui-btn"><i class="layui-icon">&#xe608;</i>添加</button></a>
+                <!--<button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button>--><button
+                    class="layui-btn"><a href="news2/create"><i class="layui-icon">&#xe608;</i>添加</a></button>
                 <!--<span class="x-right" style="line-height:40px">共有数据：88 条</span>-->
             </xblock>
             <table class="layui-table">
@@ -47,10 +47,19 @@
                             ID
                         </th>
                         <th>
-                            用户名
+                            标题
                         </th>
                         <th>
-                            创建日期
+                            作者
+                        </th>
+                        <th>
+                            分类
+                        </th>
+                        <th>
+                            点击
+                        </th>
+                        <th>
+                            发布日期
                         </th>
                         <th>
                             操作
@@ -58,12 +67,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($user as $v)
+                    @foreach($article as $v)
                     <tr>
                         <!--<td><input type="checkbox" value="1" name=""></td>-->
                         <td>{{$v['id']}}</td>
-                        <td>{{$v['user_name']}}</td>
-                        <td>{{$v['created_at']}}</td>
+                        <td><u style="cursor:pointer" onclick="<!--member_show('张三','member-show.html','10001','360','400')-->"><a
+                                    href="/article/{{$v['id']}}" target="_blank">{{$v['title']}}</a></u></td>
+                        <td>{{$v['zuozhe']}}</td>
+                        <td>{{$v->fenlei['fenlei_name']}}</td>
+                        <td>{{$v['dianji']}}</td>
+                        <td>{{$v['fbtime']}}</td>
                         {{-- <td class="td-status">
                             <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span>
                         </td> --}}
@@ -89,13 +102,10 @@
                                 }
                                 document.onclick = delete_confirm;
                             </script>
-                            <a title="编辑" href="/admin/user/{{$v['id']}}/update">
+                            <a title="编辑" href="/cxjy_admin/news12/{{$v['id']}}/edit">
                                 <i class="layui-icon">&#xe642;</i>
                             </a>
-                            <a title="删除" href="/admin/user/{{$v['id']}}/destroy" onClick="delete_confirm">
-                                删除
-                                {{-- <i class="layui-icon" onClick="delete_confirm">&#xe640;</i> --}}
-                            </a>
+                            <a href="/cxjy_admin/news12/{{$v['id']}}/destroy" onClick="delete_confirm">删除</a>
 
                         </td>
                     </tr>
@@ -105,7 +115,7 @@
                 </tbody>
 
             </table>
-            {{$user->appends(request()->all())->links()}}
+            {{$article->appends(request()->all())->links()}}
             <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>

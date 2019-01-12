@@ -16,14 +16,14 @@ class Sort1Controller extends Controller
     {
         $article = Article::orderBy('id','desc')->paginate(8);
         $fenlei = Fenlei::all();
-        return view('admin.article.index',compact('article','fenlei'));
+        return view('cxjy_admin.article.index',compact('article','fenlei'));
     }
 
     //文章添加页
     public function newscreate()
     {
         $fenlei = Fenlei::all();
-        return view('admin.article.create', compact('fenlei'));
+        return view('cxjy_admin.article.create', compact('fenlei'));
     }
     
     //文章添加
@@ -41,7 +41,7 @@ class Sort1Controller extends Controller
             $content->news_pic = '/'.$request->pic->store('news_pic/'.date('Ymd'));
         }
         if ($content->save()) {
-            return redirect('/admin/news')->with('success','发布成功');
+            return redirect('/cxjy_admin/news1')->with('success','发布成功');
         } else {
             return back()->with('error','发布失败');
         }
@@ -56,7 +56,7 @@ class Sort1Controller extends Controller
         // die;
 
         $fenlei = Fenlei::all();
-        return view('admin.article.edit', compact('article','fenlei'));
+        return view('cxjy_admin.article.edit', compact('article','fenlei'));
     }
 
     //文章修改
@@ -71,7 +71,7 @@ class Sort1Controller extends Controller
         $article->content = $request->content;
 
         if($article->save()) {
-            return redirect('/admin/news1')->with('success','修改成功');
+            return redirect('/cxjy_admin/news1')->with('success','修改成功');
         } else {
             return back()->with('error','修改失败');
         }
@@ -97,13 +97,13 @@ class Sort1Controller extends Controller
     public function sortindex()
     {
         $fenlei = Fenlei::orderBy('id','desc')->paginate(8);
-        return view('admin.sort.index',compact('fenlei'));
+        return view('cxjy_admin.sort.index',compact('fenlei'));
     }
 
     //分类添加页
     public function sortCreate()
     {
-       return view('admin.sort.create');
+       return view('cxjy_admin.sort.create');
     }
 
     //分类添加
@@ -112,7 +112,7 @@ class Sort1Controller extends Controller
        $fenlei = new Fenlei;
        $fenlei->fenlei_name = $request->fenlei_name;
        if ($fenlei->save()) {
-           return redirect('/admin/sort1')->with('success','添加成功');
+           return redirect('/cxjy_admin/sort1')->with('success','添加成功');
        } else {
            return back()->with('error','添加失败');
        }
@@ -122,7 +122,7 @@ class Sort1Controller extends Controller
     public function sortedit($id)
     { 
        $fenlei = Fenlei::findOrFail($id);
-      return view('admin.sort.edit',compact('fenlei'));
+      return view('cxjy_admin.sort.edit',compact('fenlei'));
     }
 
     //分类修改
@@ -131,7 +131,7 @@ class Sort1Controller extends Controller
        $fenlei = Fenlei::findOrFail($id);
        $fenlei->fenlei_name = $request->fenlei_name;
        if($fenlei->save()) {
-           return redirect('/admin/sort1')->with('success','修改成功');
+           return redirect('/cxjy_admin/sort1')->with('success','修改成功');
        } else {
            return back()->with('error','修改失败');
        }

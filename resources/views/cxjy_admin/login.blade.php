@@ -18,7 +18,7 @@
 		<div class="login-logo">
 			<h1>X-ADMIN V1.1</h1></div>
 		<div class="login-box">
-			<form class="layui-form layui-form-pane" action="/admin/dologin" method="post">
+			<form class="layui-form layui-form-pane" action="/cxjy_admin/dologin" method="post">
 
 				<h3>登录你的帐号</h3>
 				<label class="login-title" for="username">帐号</label>

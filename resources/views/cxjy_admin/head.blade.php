@@ -54,7 +54,7 @@
 							<a href="">切换帐号</a>
 						</dd>
 						<dd>
-							<a href="/admin/logout">退出</a>
+							<a href="/cxjy_admin/logout">退出</a>
 						</dd>
 					</dl>
 				</li>

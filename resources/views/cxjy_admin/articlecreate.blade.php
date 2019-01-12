@@ -1,10 +1,10 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     <div class="page-content">
         <div class="content">
@@ -20,12 +20,11 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/news1/shore" method="post" enctype="multipart/form-data">
-            {{-- <form class="layui-form" action="/admin/mysql2" method="post" enctype="multipart/form-data"> --}}
+            <form class="layui-form" action="/cxjy_admin/article/shore" method="post" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input biaotiaa">
                     </div>
                 </div>
 
@@ -34,49 +33,62 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">选择分类</label>
                         <div class="layui-input-inline">
-                            <select name="fenlei" lay-verify="required" lay-search="" style="z-index:2;">
+                            <select name="fenlei" id="sort" lay-verify="required" lay-search="" style="z-index:2;">
                                 <option value="">请选择</option>
                                 @foreach($fenlei as $v)
-                                <option value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
+                                <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
+                    {{-- <div class="sort" style="width:100px;height:50px;border:1px solid red;">
+                        <select name="fenlei" id="sort">
+                            <option value="">请选择</option>
+                            @foreach($fenlei as $v)
+                            <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
+                    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+                    <script>
+                        $("select").click(function(){
+                            alert(233);
+                        })
+                    </script>
                 </div>
                 <div class="layui-form-item">
 
-                    选择图片：<input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
+                    <label class="layui-form-label">选择图片</label><input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
                     <label for="file" class='btn btn-success'>Choose a file</label>
                     <img src="" id="show" width="200">
                 </div>
-                    <label class="layui-form-label">复选框</label>
+                <label class="layui-form-label">发布至:</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="like[1]" value="1" title="网站1">
+                    <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
+                    {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
+                </div>
+
+                <div class="layui-form-item" style="margin-top:50px;">
+                    <!-- 配置文件 -->
+                    <label class="layui-form-label">新闻内容</label><script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+                    <!-- 编辑器源码文件 -->
+                    <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:130px;"></script>
+                    <script type="text/javascript">
+                        //实例化编辑器
+                        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+                        var ue = UE.getEditor('editor');
+                    </script>
+                </div>
+
+                <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <input type="checkbox" name="like[1]" value="1" title="网站1">
-                        <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
-                        {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
+                        <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
-
-                    <div class="layui-form-item" style="margin-top:50px;">
-                        <!-- 配置文件 -->
-                        新闻内容：<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-                        <!-- 编辑器源码文件 -->
-                        <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-                        <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:100px;"></script>
-                        <script type="text/javascript">
-                            //实例化编辑器
-                            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-                            var ue = UE.getEditor('editor');
-
-                        </script>
-                    </div>
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                        </div>
-                    </div>
-                    {{csrf_field()}}
+                </div>
+                {{csrf_field()}}
             </form>
             {{-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
                 <legend>方框风格的表单集合</legend>

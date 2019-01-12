@@ -1,10 +1,10 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     <div class="page-content">
         <div class="content">
@@ -20,7 +20,7 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/news2/{{$article['id']}}/update" method="post" enctype="multipart/form-data">
+            <form class="layui-form" action="/cxjy_admin/news1/{{$article['id']}}/update" method="post" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
@@ -31,13 +31,18 @@
                 <div class="layui-form-item">
                     
                     <div class="layui-inline">
+                             
+                            
                         <label class="layui-form-label">选择分类</label>
+                        
                         <div class="layui-input-inline">
                             <select name="fenlei" lay-verify="required" lay-search="" style="z-index:2;">
                                 <option value="">请选择</option>
                                 @foreach($fenlei as $v)
-                                <option value="{{$v['id']}}" {{$v['id']}}=={{$article['fenlei_id']}} ? selected="selected" : " ">{{$v['fenlei_name']}}</option>
+                                <option value="{{$v['id']}}" <?php if($v['id'] == $article['fenlei_id'])echo "selected='selected'"; ?>>{{$v['fenlei_name']}}</option>
+                                
                                 @endforeach
+                                
                             </select>
                         </div>
                     </div>
@@ -207,7 +212,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ©2017 x-cxjy_admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->

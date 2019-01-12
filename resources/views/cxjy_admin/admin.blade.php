@@ -1,10 +1,10 @@
     <!-- 顶部开始 -->
-        @include('admin.head')
+        @include('cxjy_admin.head')
     <!-- 顶部结束 -->
     <!-- 中部开始 -->
     <div class="wrapper">
         <!-- 左侧主体开始 -->
-        @include('admin.admin_menu')
+        @include('cxjy_admin.admin_menu')
         <!-- 左侧主体开始 -->
         <!-- 右侧主体开始 -->
         <div class="page-content">

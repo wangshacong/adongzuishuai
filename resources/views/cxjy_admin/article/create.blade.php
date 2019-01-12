@@ -1,10 +1,10 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     <div class="page-content">
         <div class="content">
@@ -20,8 +20,8 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/news2/shore" method="post" enctype="multipart/form-data">
-            {{-- <form class="layui-form" action="/admin/mysql2" method="post" enctype="multipart/form-data"> --}}
+            <form class="layui-form" action="/cxjy_admin/news1/shore" method="post" enctype="multipart/form-data">
+            {{-- <form class="layui-form" action="/cxjy_admin/mysql2" method="post" enctype="multipart/form-data"> --}}
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
@@ -49,12 +49,7 @@
                     <label for="file" class='btn btn-success'>Choose a file</label>
                     <img src="" id="show" width="200">
                 </div>
-                    <label class="layui-form-label">复选框</label>
-                    <div class="layui-input-block">
-                        <input type="checkbox" name="like[1]" value="1" title="网站1">
-                        <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
-                        {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
-                    </div>
+                    
 
                     <div class="layui-form-item" style="margin-top:50px;">
                         <!-- 配置文件 -->
@@ -206,7 +201,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
+    <div class="copyright">Copyright ©2017 x-cxjy_admin v2.3 All Rights Reserved. 本后台系统由X前端框架提供前端技术支持</div>
 </div>
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->

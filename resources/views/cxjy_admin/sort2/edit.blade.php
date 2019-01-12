@@ -1,110 +1,19 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     {{-- <script src="http://code.jquery.com/jquery-latest.js"></script> --}}
-    {{-- <form method="post" action="#">
-            <div class="int">
-                <label for="name">姓名：</label>
-                <input type="text" id="name" class="required" />
-            </div>
-            <div class="int">
-                <label for="email">邮箱：</label>
-                <input type="text" id="email" class="required" />
-            </div>
-            <div class="int">
-                <label for="address">住址：</label>
-                <input type="text" id="address" />
-            </div>
-            <div class="int">
-                <input type="submit" value="提交" id="send" style="margin-left: 70px;" />
-                <input type="reset" value="重置" id="res" />
-            </div>
-    </form> --}}
-        <script>
-            //为表单的必填文本框添加提示信息（选择form中的所有后代input元素）
-            $("form :input.required").each(function () {
-                //通过jquery api：$("HTML字符串") 创建jquery对象
-                var $required = $("<strong class='high'>*</strong>");
-                //添加到this对象的父级对象下
-                $(this).parent().append($required);
-            });
-    
-            //为表单元素添加失去焦点事件
-            $("form :input").blur(function(){
-                var $parent = $(this).parent();
-                $parent.find(".msg").remove(); //删除以前的提醒元素（find()：查找匹配元素集中元素的所有匹配元素）
-                //验证姓名
-                if($(this).is("#name")){
-                    var nameVal = $.trim(this.value); //原生js去空格方式：this.replace(/(^\s*)|(\s*$)/g, "")
-                    var regName = /[~#^$@%&!*()<>:;'"{}【】  ]/;
-                    if(nameVal == "" || nameVal.length < 6 || regName.test(nameVal)){
-                        var errorMsg = " 姓名非空，长度6位以上，不包含特殊字符！";
-                        //class='msg onError' 中间的空格是层叠样式的格式
-                        $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
-                    }
-                    else{
-                        var okMsg=" 输入正确";
-                        $parent.find(".high").remove();
-                        $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
-                    }
-                }
-                //验证邮箱
-                if($(this).is("#email")){
-                    var emailVal = $.trim(this.value);
-                    var regEmail = /.+@.+\.[a-zA-Z]{2,4}$/;
-                    if(emailVal== "" || (emailVal != "" && !regEmail.test(emailVal))){
-                        var errorMsg = " 请输入正确的E-Mail住址！";
-                        $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
-                    }
-                    else{
-                        var okMsg=" 输入正确";
-                        $parent.find(".high").remove();
-                        $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
-                    }
-                }
-            }).keyup(function(){
-                //triggerHandler 防止事件执行完后，浏览器自动为标签获得焦点
-                $(this).triggerHandler("blur"); 
-            }).focus(function(){
-                $(this).triggerHandler("blur");
-            });
-            
-            //点击重置按钮时，通过trigger()来触发文本框的失去焦点事件
-            $("#send").click(function(){
-                //trigger 事件执行完后，浏览器会为submit按钮获得焦点
-                $("form .required:input").trigger("blur"); 
-                var numError = $("form .onError").length;
-                if(numError){
-                    return false;
-                }
-                alert("注册成功！");
-            });
-           
-        </script>
-        <script>
-            {{-- $("input").blur(function(){
-               
-                var name = $("input").val();
-                console.log(name);
-            }); --}}
-        </script>
-            <form class="layui-form" action="/admin/user/shore" method="post">
+        
+            <form class="layui-form" action="/cxjy_admin/sort2/{{$fenlei['id']}}/update" method="get">
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">用户名</label>
+                    <label class="layui-form-label">分类名</label>
                     <div class="layui-input-inline int">
-                        <input type="text" name="username" id="name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">输入新密码</label>
-                    <div class="layui-input-inline">
-                        <input type="password" name="passwd" lay-verify="required" placeholder="请填写6到12位密码" autocomplete="off" class="layui-input">
+                        <input type="text" name="fenlei_name" id="name" lay-verify="required" value="{{$fenlei['fenlei_name']}}" autocomplete="off" class="layui-input">
                     </div>
                 </div>
 
@@ -332,11 +241,11 @@
                 </div> --}}
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">添加</button>
+                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">修改</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
-                {{csrf_field()}}
+                //{{csrf_field()}}
             </form>
             {{-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
                 <legend>方框风格的表单集合</legend>

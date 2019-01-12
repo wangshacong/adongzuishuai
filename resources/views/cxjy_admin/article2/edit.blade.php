@@ -1,16 +1,16 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     <div class="page-content">
         <div class="content">
-
-            <script>
-                function changepic() {
+                
+                <script>
+                        function changepic() {
                             var reads= new FileReader();
                             f=document.getElementById('file').files[0];
                             reads.readAsDataURL(f);
@@ -20,68 +20,57 @@
                         }
                     </script>
             <!-- 右侧内容框架，更改从这里开始 -->
-            <form class="layui-form" action="/admin/article/shore" method="post" enctype="multipart/form-data">
+            <form class="layui-form" action="/cxjy_admin/news12/{{$article['id']}}/update" method="post" enctype="multipart/form-data">
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题</label>
                     <div class="layui-input-block">
-                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input biaotiaa">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" value="{{$article['title']}}" class="layui-input">
                     </div>
                 </div>
 
                 <div class="layui-form-item">
-
+                    
                     <div class="layui-inline">
                         <label class="layui-form-label">选择分类</label>
                         <div class="layui-input-inline">
-                            <select name="fenlei" id="sort" lay-verify="required" lay-search="" style="z-index:2;">
+                            <select name="fenlei" lay-verify="required" lay-search="" style="z-index:2;">
                                 <option value="">请选择</option>
                                 @foreach($fenlei as $v)
-                                <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
+                                <option value="{{$v['id']}}" {{$v['id']}}=={{$article['fenlei_id']}} ? selected="selected" : " ">{{$v['fenlei_name']}}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    {{-- <div class="sort" style="width:100px;height:50px;border:1px solid red;">
-                        <select name="fenlei" id="sort">
-                            <option value="">请选择</option>
-                            @foreach($fenlei as $v)
-                            <option class="sort" value="{{$v['id']}}">{{$v['fenlei_name']}}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
-                    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-                    <script>
-                        $("select").click(function(){
-                            alert(233);
-                        })
-                    </script>
                 </div>
                 <div class="layui-form-item">
-
-                    <label class="layui-form-label">选择图片</label><input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
-                    <label for="file" class='btn btn-success'>Choose a file</label>
-                    <img src="" id="show" width="200">
-                </div>
-                <label class="layui-form-label">发布至:</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="like[1]" value="1" title="网站1">
-                    <input type="checkbox" name="like[2]" value="2" title="网站2" checked="">
-                    {{-- <input type="checkbox" name="like[3]" value="3" title="网站3"> --}}
+                
+                        选择图片：<input id="file" name="pic" class="filepath" onchange="changepic(this)" type="file" accept="image/*"><br>
+                <label for="file" class='btn btn-success'>Choose a file</label>
+                <img src="{{$article['news_pic']}}" id="show" width="200">
                 </div>
 
                 <div class="layui-form-item" style="margin-top:50px;">
                     <!-- 配置文件 -->
-                    <label class="layui-form-label">新闻内容</label><script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+                    新闻内容：<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+                    
+                    
+                    
                     <!-- 编辑器源码文件 -->
                     <script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
-                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:130px;"></script>
+                    <script src="/ueditor/ueditor.parse.js"></script>
+                    <script id="editor" name="content" type="text/plain" style="width:90%;height:500px;margin-left:100px;"><?php echo $article['content'] ?></script>
                     <script type="text/javascript">
+                        
                         //实例化编辑器
                         //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
                         var ue = UE.getEditor('editor');
                     </script>
-                </div>
 
+
+
+
+                </div>
+                
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>

@@ -18,92 +18,92 @@
 
 //后台页面
 //登录页面
-Route::get('admin/login', 'Admin\AdminController@login');
+Route::get('cxjy_admin/login', 'Admin\AdminController@login');
 //登录验证
-Route::post('/admin/dologin', 'Admin\AdminController@dologin');
+Route::post('/cxjy_admin/dologin', 'Admin\AdminController@dologin');
 //退出登录
-Route::get('admin/logout', 'Admin\AdminController@logout');
-// Route::group(['middleware' => 'login'], function () {
+Route::get('cxjy_admin/logout', 'Admin\AdminController@logout');
+ Route::group(['middleware' => 'login'], function () {
 //首页
-    Route::get('/admin', 'Admin\AdminController@index');
+    Route::get('/cxjy_admin', 'Admin\AdminController@index');
     //用户列表
-    Route::get('/admin/user', 'Admin\AdminController@userindex');
+    Route::get('/cxjy_admin/user', 'Admin\AdminController@userindex');
     //用户添加页面
-    Route::get('/admin/user/create', 'Admin\AdminController@usercreate');
+    Route::get('/cxjy_admin/user/create', 'Admin\AdminController@usercreate');
     //用户添加
-    Route::post('admin/user/shore', 'Admin\AdminController@usershore');
+    Route::post('cxjy_admin/user/shore', 'Admin\AdminController@usershore');
     //用户修改页面
-    Route::get('admin/user/{id}/update', 'Admin\AdminController@userupdate');
+    Route::get('cxjy_admin/user/{id}/update', 'Admin\AdminController@userupdate');
     //用户提交修改
-    Route::post('admin/user/{id}/edit', 'Admin\AdminController@useredit');
+    Route::post('cxjy_admin/user/{id}/edit', 'Admin\AdminController@useredit');
     //用户删除
-    Route::get('admin/user/{id}/destroy', 'Admin\AdminController@userdestroy');
+    Route::get('cxjy_admin/user/{id}/destroy', 'Admin\AdminController@userdestroy');
 
     //第一个网站
     //分类列表
-    Route::get('/admin/sort1','Admin\Sort1Controller@sortindex');
+    Route::get('/cxjy_admin/sort1','Admin\Sort1Controller@sortindex');
     //分类添加页面
-    Route::get('/admin/sort1/create', 'Admin\Sort1Controller@sortcreate');
+    Route::get('/cxjy_admin/sort1/create', 'Admin\Sort1Controller@sortcreate');
     //分类添加
-    Route::get('/admin/sort1/shore', 'Admin\Sort1Controller@sortshore');
+    Route::get('/cxjy_admin/sort1/shore', 'Admin\Sort1Controller@sortshore');
     //分类修改页
-    Route::get('/admin/sort1/{id}/edit', 'Admin\Sort1Controller@sortedit');
+    Route::get('/cxjy_admin/sort1/{id}/edit', 'Admin\Sort1Controller@sortedit');
     //分类修改
-    Route::get('/admin/sort1/{id}/update','Admin\Sort1Controller@sortupdate');
+    Route::get('/cxjy_admin/sort1/{id}/update','Admin\Sort1Controller@sortupdate');
     //分类删除
-    Route::get('/admin/sort1/{id}/destroy','Admin\Sort1Controller@sortdestroy');
+    Route::get('/cxjy_admin/sort1/{id}/destroy','Admin\Sort1Controller@sortdestroy');
     
     //第一个网站
     //新闻列表
-    Route::get('/admin/news1', 'Admin\Sort1Controller@newsindex');
+    Route::get('/cxjy_admin/news1', 'Admin\Sort1Controller@newsindex');
     //新闻添加页
-    Route::get('/admin/news1/create', 'Admin\Sort1Controller@newscreate');
+    Route::get('/cxjy_admin/news1/create', 'Admin\Sort1Controller@newscreate');
     //新闻添加
-    Route::post('/admin/news1/shore', 'Admin\Sort1Controller@newsshore');
+    Route::post('/cxjy_admin/news1/shore', 'Admin\Sort1Controller@newsshore');
     //新闻修改页
-    Route::get('/admin/news1/{id}/edit','Admin\Sort1Controller@newsedit');
+    Route::get('/cxjy_admin/news1/{id}/edit','Admin\Sort1Controller@newsedit');
     //新闻修改
-    Route::post('/admin/news1/{id}/update', 'Admin\Sort1Controller@newsupdate');
+    Route::post('/cxjy_admin/news1/{id}/update', 'Admin\Sort1Controller@newsupdate');
     //新闻删除
-    Route::get('/admin/news1/{id}/destroy', 'Admin\Sort1Controller@destroy');
+    Route::get('/cxjy_admin/news1/{id}/destroy', 'Admin\Sort1Controller@destroy');
 
     //第二个网站
     //分类列表
-    Route::get('/admin/sort2','Admin\Sort2Controller@sortindex');
+    Route::get('/cxjy_admin/sort2','Admin\Sort2Controller@sortindex');
     //分类添加页面
-    Route::get('/admin/sort2/create', 'Admin\Sort2Controller@sortcreate');
+    Route::get('/cxjy_admin/sort2/create', 'Admin\Sort2Controller@sortcreate');
     //分类添加
-    Route::get('/admin/sort2/shore', 'Admin\Sort2Controller@sortshore');
+    Route::get('/cxjy_admin/sort2/shore', 'Admin\Sort2Controller@sortshore');
     //分类修改页
-    Route::get('/admin/sort2/{id}/edit', 'Admin\Sort2Controller@sortedit');
+    Route::get('/cxjy_admin/sort2/{id}/edit', 'Admin\Sort2Controller@sortedit');
     //分类修改
-    Route::get('/admin/sort2/{id}/update','Admin\Sort2Controller@sortupdate');
+    Route::get('/cxjy_admin/sort2/{id}/update','Admin\Sort2Controller@sortupdate');
     //分类删除
-    Route::get('/admin/sort2/{id}/destroy','Admin\Sort2Controller@sortdestroy');
+    Route::get('/cxjy_admin/sort2/{id}/destroy','Admin\Sort2Controller@sortdestroy');
     
     //第二个网站
     //新闻列表
-    Route::get('/admin/news2', 'Admin\Sort2Controller@newsindex');
+    Route::get('/cxjy_admin/news12', 'Admin\Sort2Controller@newsindex');
     //新闻添加页
-    Route::get('/admin/news2/create', 'Admin\Sort2Controller@newscreate');
+    Route::get('/cxjy_admin/news12/create', 'Admin\Sort2Controller@newscreate');
     //新闻添加
-    Route::post('/admin/news2/shore', 'Admin\Sort2Controller@newsshore');
+    Route::post('/cxjy_admin/news12/shore', 'Admin\Sort2Controller@newsshore');
     //新闻修改页
-    Route::get('/admin/news2/{id}/edit','Admin\Sort2Controller@newsedit');
+    Route::get('/cxjy_admin/news12/{id}/edit','Admin\Sort2Controller@newsedit');
     //新闻修改
-    Route::post('/admin/news2/{id}/update', 'Admin\Sort2Controller@newsupdate');
+    Route::post('/cxjy_admin/news12/{id}/update', 'Admin\Sort2Controller@newsupdate');
     //新闻删除
-    Route::get('/admin/news2/{id}/destroy', 'Admin\Sort2Controller@destroy');
+    Route::get('/cxjy_admin/news12/{id}/destroy', 'Admin\Sort2Controller@destroy');
 
     //全站新闻发布页
-    Route::get('/admin/article/create', 'Admin\AdminController@articlecreate');
+    Route::get('/cxjy_admin/article/create', 'Admin\AdminController@articlecreate');
     //全站新闻发布
-    Route::post('/admin/article/shore', 'Admin\AdminController@articleshore');
+    Route::post('/cxjy_admin/article/shore', 'Admin\AdminController@articleshore');
     //全站添加分类页
-    Route::get('/admin/allsort/create', 'Admin\AdminController@allsortcreate');
+    Route::get('/cxjy_admin/allsort/create', 'Admin\AdminController@allsortcreate');
     //全站添加分类
-    Route::get('/admin/allsort/shore', 'Admin\AdminController@allsortshore');
-// });
+    Route::get('/cxjy_admin/allsort/shore', 'Admin\AdminController@allsortshore');
+ });
 
 
 //前台页面

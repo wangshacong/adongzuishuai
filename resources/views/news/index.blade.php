@@ -86,12 +86,12 @@
 				<h2 class="tit"><a href="/fenlei/{{$v['id']}}">{{$v['fenlei_name']}}</a><span class="more"><a href="fenlei/{{$v['id']}}">更多</a></span></h2>
 				<?php 
 				
-					$article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('id','desc') -> limit(10) -> get();
+					$article = \DB::Table('articles') -> where('fenlei_id',$v['id']) -> orderBy('created_at','desc') -> limit(10) -> get();
 
 				?>
 				<ul>
 					@foreach($article as $val)
-					<li><a href="/article/{{$val->id}}" title="能擦玻璃能炒菜还能说会道 机器人做餐厅主角" target="_blank">{{$val->title}}</a>
+					<li><a href="/article/{{$val->id}}" title="{{$val->title}}" target="_blank">{{$val->title}}</a>
 						<!-- class="mar_t" -->
 					</li>@endforeach
 

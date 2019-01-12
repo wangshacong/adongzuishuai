@@ -1,22 +1,30 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
-    {{-- <script src="http://code.jquery.com/jquery-latest.js"></script> --}}
-        
-            <form class="layui-form" action="/admin/sort1/shore" method="get">
-
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <form class="layui-form" action="/cxjy_admin/user/{{$user['id']}}/edit" method="post">
+                
                 <div class="layui-form-item">
-                    <label class="layui-form-label">分类名</label>
-                    <div class="layui-input-inline int">
-                        <input type="text" name="fenlei_name" id="name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" value="{{$user['user_name']}}" class="layui-input">
                     </div>
                 </div>
-
+                <div class="layui-form-item">
+                    <label class="layui-form-label">输入新密码</label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="passwd" lay-verify="required" placeholder="请填写6到12位密码" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+                
                 {{-- <div class="layui-form-item">
                     <label class="layui-form-label">单行输入框</label>
                     <div class="layui-input-block">
@@ -241,11 +249,11 @@
                 </div> --}}
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">添加</button>
+                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">修改</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
-                //{{csrf_field()}}
+                {{csrf_field()}}
             </form>
             {{-- <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
                 <legend>方框风格的表单集合</legend>

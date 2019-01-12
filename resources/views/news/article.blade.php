@@ -91,7 +91,7 @@
                 </div>
                 
 
-                <div class="relative_news">
+                <div class="relative_news" style="margin-top:35px;">
                     <h2 class="tit2">您可能也感兴趣:</h2>
                     <ul>
 
@@ -139,7 +139,7 @@
                 <?php
                     $redian = \DB::Table('articles')->orderBy('news_pic','desc')->limit(3)->get();
                 ?>
-                <div class="hotpot">
+                <div class="hotpot" style="margin-top:0px;">
                     <h2 class="tit">今日热点</h2>
                     <div class="hotpot_con">
                         @foreach($redian as $v)

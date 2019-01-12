@@ -1,14 +1,14 @@
 <!-- 顶部开始 -->
-@include('admin.head')
+@include('cxjy_admin.head')
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
 <div class="wrapper">
     <!-- 左侧主体开始 -->
-    @include('admin.admin_menu')
+    @include('cxjy_admin.admin_menu')
     <!-- 左侧主体结束 -->
     {{-- <script src="http://code.jquery.com/jquery-latest.js"></script> --}}
 
-    <form class="layui-form" action="/admin/allsort/shore" method="get">
+    <form class="layui-form" action="/cxjy_admin/allsort/shore" method="get">
 
         <div class="layui-form-item">
             <label class="layui-form-label">分类名</label>
