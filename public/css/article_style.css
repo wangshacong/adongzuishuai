@@ -1125,11 +1125,9 @@
     /*FireFox*/
     vertical-align: middle;
 }
-
 .paihang2_con ul li:last-child {
     border-bottom: none;
 }
-
 .paihang2_con ul li span {
     float: right;
     color: #747474;
@@ -1149,7 +1147,6 @@
 .paihang2_con ul li i.num2 {
     background-color: #ff9000;
 }
-
 .paihang2_con ul li i.num3 {
     background-color: #ffd800;
 }
