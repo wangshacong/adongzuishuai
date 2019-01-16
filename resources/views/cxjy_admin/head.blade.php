@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>稿件吧后台管理系统</title>
+		<title>创想金玉新闻网站后台</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="/css/font.css">
@@ -39,7 +39,7 @@
 		<!-- 顶部开始 -->
 		<div class="container">
 			<div class="logo">
-				<a href="./index.html">稿件吧后台管理</a>
+				<a href="./index.html">创想金玉新闻网站后台</a>
 			</div>
 			<div class="open-nav"><i class="iconfont">&#xe699;</i></div>
 			<ul class="layui-nav right" lay-filter="">

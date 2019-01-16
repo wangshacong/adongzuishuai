@@ -323,14 +323,10 @@ class ComposerStaticInita2001cde64a8e01ae780244149e8c201
 
     public static $classMap = array (
         'App\\Article' => __DIR__ . '/../..' . '/app/Article.php',
-        'App\\Article2' => __DIR__ . '/../..' . '/app/Article2.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Fenlei' => __DIR__ . '/../..' . '/app/Fenlei.php',
-        'App\\Fenlei2' => __DIR__ . '/../..' . '/app/Fenlei2.php',
         'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
-        'App\\Http\\Controllers\\Admin\\Sort1Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Sort1Controller.php',
-        'App\\Http\\Controllers\\Admin\\Sort2Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Sort2Controller.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',

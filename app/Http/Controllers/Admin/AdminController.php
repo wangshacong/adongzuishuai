@@ -7,6 +7,8 @@ use App\Fenlei;
 use App\Article;
 use App\Fenlei2;
 use App\Article2;
+use App\Fenlei3;
+use App\Article3;
 use App\Mysql2Fenlei;
 use Illuminate\Http\Request;
 use Faker\Provider\lv_LV\Color;
@@ -24,8 +26,10 @@ class AdminController extends Controller
     public function index()
     {
         //
+		 $article = Article::orderBy('id','desc')->paginate(8);
+        $fenlei = Fenlei::all();
         $sessioninfo=\Session::all();
-        return view('cxjy_admin.admin');
+        return view('cxjy_admin.article.index',compact('article','fenlei'));
     }
 
     /**
@@ -202,6 +206,21 @@ class AdminController extends Controller
             if($request->hasFile('pic')){
                 $content->news_pic = '/'.$request->pic->store('news2_pic/'.date('Ymd'));
             }
+        }
+        if(in_array(3,$web)){
+            $zuozhe = \Session::get('username');
+            $content = new Article3;
+            $content->title = $request->title;
+            $content->zuozhe = $zuozhe;
+            $fenlei = Fenlei::where('id',$request->fenlei)->first();
+            $fenlei_name = $fenlei->fenlei_name;
+            $fenlei = Fenlei2::where('fenlei_name',$fenlei_name)->first();
+            $content->fenlei2_id = $fenlei->id;
+            $content->content = $request->content;
+            $content->dianji = rand(100,1000);
+            if($request->hasFile('pic')){
+                $content->news_pic = '/'.$request->pic->store('news3_pic/'.date('Ymd'));
+            }
             if($content->save()){
                 return redirect('/cxjy_admin')->with('success','发布成功');
             } else {
@@ -220,15 +239,19 @@ class AdminController extends Controller
      //全站添加分类
      public function allsortshore(Request $request)
      {
-        $web = $request->sort;
-        dump($web);
+        
         if (in_array(1, $web)) {
             $sort = new Fenlei;
             $sort->fenlei_name = $request->fenlei_name;
             $sort->save();
         }
-        if(in_array(2,$web)){
+        if (in_array(2, $web)) {
             $sort = new Fenlei2;
+            $sort->fenlei_name = $request->fenlei_name;
+            $sort->save();
+        }
+        if(in_array(3,$web)){
+            $sort = new Fenlei3;
             $sort->fenlei_name = $request->fenlei_name;
             if($sort->save()){
                 return redirect('/cxjy_admin')->with('success','发布成功');
